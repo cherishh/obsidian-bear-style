@@ -12,72 +12,19 @@ This is a **CSS snippet for Obsidian's default theme**, plus a small optional de
 
 ## Install with your AI agent
 
-Copy the prompt below into an agent with access to your local files and Obsidian, such as Codex or Claude Code. It asks for the complete demo setup, including the two optional community plugins. The agent may need your vault path or help with an Obsidian permission prompt. A chat-only assistant cannot install files on your computer.
+Copy this into an agent with access to your local files and Obsidian, such as Codex or Claude Code:
 
 ```text
-Please install Obsidian Bear Style in my Obsidian vault and get the full demo
-setup working, rather than only giving me instructions.
+Install the full Obsidian Bear Style setup in my vault: CSS, Bear Cursor,
+Highlightr, Code Styler, and the demo note. Follow this guide:
+https://raw.githubusercontent.com/cherishh/obsidian-bear-style/main/INSTALL.md
 
-Project: https://github.com/cherishh/obsidian-bear-style
-Read the current README, including “Match the screenshots” and compatibility
-notes. Download the latest stable release from that repository.
-
-1. Identify my intended vault, its actual configuration folder (normally
-   .obsidian, but it can be customized), my OS, and Obsidian version. If the
-   target vault is ambiguous, ask me which one before changing anything.
-
-2. Back up the files and settings you will change to a dated local folder
-   outside the active snippets/plugins directories. Preserve my notes and
-   unrelated settings. Merge configuration changes instead of replacing whole
-   JSON files. If Obsidian is running, use its settings UI or supported APIs;
-   otherwise have it closed before editing configuration files so changes are
-   not overwritten. Do not force-quit it or discard unsaved edits.
-
-3. Install and enable bear.css. Use the Default theme, light mode, 15px text,
-   accent #cd5853, and readable line length to match the screenshots, unless
-   I have specified a different appearance preference. Preserve existing font
-   choices. Disable conflicting appearance snippets only when necessary and
-   record exactly what you changed.
-
-4. On a compatible desktop installation, install and enable the included
-   Bear Cursor plugin. Check its manifest for the minimum Obsidian version.
-   Disable Ninja Cursor or another active cursor replacement if it conflicts;
-   do not uninstall unrelated plugins. On mobile or an unsupported version,
-   keep the native red caret and explain that the 2px replacement was skipped.
-   Do not upgrade Obsidian without asking me.
-
-5. Install and enable Highlightr (highlightr-plugin) and Code Styler
-   (code-styler), then apply the screenshot settings documented in the README.
-   Use Obsidian's community plugin browser or the official upstream repositories
-   linked there. Reuse compatible installed versions; do not blindly downgrade
-   them or erase other settings. These plugins are optional for the CSS alone,
-   but I want them for this full setup. Respect any required permission prompts;
-   if an action needs my help, finish the independent work and explain exactly
-   what I need to do.
-
-6. Copy the included English demo note and quiet-space.svg into a demo folder
-   in my vault, keeping them together. Do not overwrite an existing note; reuse
-   identical sample files or choose a new folder when they differ. Make repeat
-   runs safe: no duplicate plugin entries, snippets, or unnecessary demo copies.
-
-7. Reload Obsidian as needed and open the demo. Verify the snippet and plugins
-   are actually enabled, the image resolves, colored highlights and code line
-   numbers render, and the caret is visible while editing. Check a heading,
-   a link, and a numbered list for duplicate carets. If you cannot inspect the
-   running app, clearly separate files installed from behavior not yet verified;
-   do not claim full success based only on copied files.
-
-Do not download, extract, or install any fonts. Tell me that fonts are NOT
-included: the screenshots use Bear Sans UI / Bear Sans UI Heading for text
-and Fira Code / Roboto Mono for code. Without those already installed, my
-existing fonts will be used and letter shapes and wrapping can differ.
-
-Finish with a short summary of what was installed and verified, anything
-skipped or still requiring my action, the backup location, and how to undo
-your changes. Keep all of my vault contents and backups local.
+Back up changes, preserve my notes and unrelated settings, and verify the result.
+Don't install fonts; explain how that affects the appearance.
+Ask for my vault path if needed, and tell me if anything requires my help.
 ```
 
-Prefer to install only the essentials? Use the [manual installation steps](#install-the-style) below; Highlightr and Code Styler are not required for the CSS.
+The agent reads the [detailed installation guide](INSTALL.md), so you don't have to copy it. For CSS only, use the [manual steps](#install-the-style).
 
 ## A look around
 

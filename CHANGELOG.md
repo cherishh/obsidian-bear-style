@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-- Add English and Chinese copy-and-paste agent installation prompts covering the full demo setup, font exclusions, backups, repeat runs, and verification.
+- Add short English and Chinese agent installation prompts, backed by a detailed INSTALL.md guide covering the full demo setup, font exclusions, backups, repeat runs, and verification.
 
 ## 1.0.0 — 2026-09-17
 

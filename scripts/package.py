@@ -7,7 +7,7 @@ from zipfile import ZIP_DEFLATED, ZipFile
 root = Path(__file__).resolve().parents[1]
 version = json.loads((root / "plugins/bear-cursor/manifest.json").read_text())["version"]
 files = [
-    "README.md", "README.zh-CN.md", "LICENSE", "CHANGELOG.md",
+    "README.md", "README.zh-CN.md", "INSTALL.md", "LICENSE", "CHANGELOG.md",
     "snippets/bear.css", "plugins/bear-cursor/manifest.json",
     "plugins/bear-cursor/main.js", "plugins/bear-cursor/styles.css",
     "plugins/bear-cursor/README.md", "examples/Bear Style Demo.md",
