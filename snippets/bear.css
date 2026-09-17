@@ -1,0 +1,105 @@
+/* Bear-inspired appearance for Obsidian's default theme.
+   Fonts and base font size stay in Settings > Appearance.
+   Enable in Settings > Appearance > CSS snippets. */
+
+/* 1. Shared values: the main place to tune the look. */
+body {
+  --bear-accent: #cd5853;
+  --bear-accent-hover: rgba(205, 88, 83, 0.9);
+  --bear-muted: #999;
+  --bear-image-border: #d3d3d3;
+  --bear-line-height: 1.8;
+  --bear-table-line-height: 1.6;
+  --bear-heading-line-height: 1.8;
+  --bear-line-width: 700px;
+  --bear-paragraph-spacing: 1rem;
+  --bear-list-marker-gap: 0.5em;
+  --bear-quote-inset: 0.8em;
+  --bear-highlight-padding: 0.2em;
+  --bear-highlight-radius: 0.2em;
+  --bear-caret-color: var(--bear-accent);
+  --bear-caret-width: 2px;
+
+  /* These line-height values must be unitless: plugins multiply them by lengths. */
+  --line-height-normal: var(--bear-line-height);
+  --table-line-height: var(--bear-table-line-height);
+  --file-line-width: var(--bear-line-width);
+  --p-spacing: var(--bear-paragraph-spacing);
+  --list-spacing: 0.075em;
+
+  --list-marker-color: var(--bear-accent);
+  --text-formatting: var(--bear-accent);
+  --list-bullet-size: 0.4em;
+  --checkbox-size: calc(var(--font-text-size) * 1.1);
+  --checkbox-border-color: var(--bear-muted);
+  --link-external-color: var(--bear-accent);
+  --link-external-color-hover: var(--bear-accent-hover);
+  --link-decoration: none;
+  --link-decoration-hover: none;
+  --link-external-decoration: none;
+  --link-external-decoration-hover: none;
+  --blockquote-color: var(--bear-muted);
+  --blockquote-border-thickness: 4px;
+
+  /* Use the same heading scale in the editor and reading mode. */
+  --h1-size: 1.8em;
+  --h2-size: 1.462em;
+  --h3-size: 1.318em;
+  --h4-size: 1.188em;
+  --h5-size: 1.076em;
+  --h6-size: 1em;
+  --h1-line-height: var(--bear-heading-line-height);
+  --h2-line-height: var(--bear-heading-line-height);
+  --h3-line-height: var(--bear-heading-line-height);
+  --h4-line-height: var(--bear-heading-line-height);
+  --h5-line-height: var(--bear-heading-line-height);
+  --h6-line-height: var(--bear-heading-line-height);
+}
+
+body.theme-dark {
+  --bear-muted: #aaa;
+  --bear-image-border: #4b4b4b;
+}
+
+/* 2. List markers: the same spacing at every nesting level.
+   Apply the gap to the rendered marker OR its editable Markdown token, never both. */
+.markdown-source-view.mod-cm6 :is(.cm-formatting-list-ul, .cm-formatting-list-ol) > :is(.list-bullet, .list-number),
+.markdown-source-view.mod-cm6 :is(.cm-formatting-list-ul, .cm-formatting-list-ol):not(:has(> :is(.list-bullet, .list-number))) {
+  padding-inline-end: var(--bear-list-marker-gap);
+}
+
+/* Match the native editor's quote inset; keep its measured hanging indent intact.
+   Reading-mode borders take layout space, while editor borders are overlaid. */
+.markdown-preview-view.markdown-rendered blockquote {
+  padding-inline-start: max(0px, calc(var(--bear-quote-inset) - var(--blockquote-border-thickness)));
+}
+
+/* 3. Highlightr owns highlight colors; this snippet owns padding and rounding.
+   Scope to note content, including live-preview callouts. */
+:is(.markdown-source-view.mod-cm6, .markdown-preview-view.markdown-rendered) :is(mark, span.cm-highlight) {
+  padding: var(--bear-highlight-padding);
+  border-radius: var(--bear-highlight-radius);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* 4. Images and secondary text: do not style app or plugin UI images. */
+.markdown-source-view.mod-cm6 .cm-content img:not(.emoji):not(.twemoji),
+.markdown-preview-view.markdown-rendered img:not(.emoji):not(.twemoji) {
+  border: 1px solid var(--bear-image-border);
+}
+
+.markdown-source-view.mod-cm6 :is(span.cm-strikethrough, del),
+.markdown-preview-view.markdown-rendered del {
+  color: var(--bear-muted);
+}
+
+/* 5. Cursor colors. Bear Cursor owns its replacement layer and lifecycle.
+   Keep the native caret visible as a fallback when that plugin is disabled. */
+.markdown-source-view.mod-cm6 .cm-content {
+  caret-color: var(--bear-caret-color);
+}
+.markdown-source-view.mod-cm6 :is(.cm-cursor, .cm-dropCursor) {
+  border-left-color: var(--bear-caret-color);
+  border-left-width: var(--bear-caret-width);
+}

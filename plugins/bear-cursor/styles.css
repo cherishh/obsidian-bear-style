@@ -1,0 +1,33 @@
+/* Hide the native caret only while a replacement actually exists.
+   Disabling/unloading this plugin automatically restores the native caret. */
+.markdown-source-view.mod-cm6 .cm-editor.cm-focused:has(> .cm-scroller > .bear-cursor-layer > .bear-cursor-caret) .cm-content,
+.markdown-source-view.mod-cm6 .cm-editor.cm-focused:has(> .cm-scroller > .bear-cursor-layer > .bear-cursor-caret) .cm-content > .cm-line {
+  caret-color: transparent;
+}
+
+.bear-cursor-layer {
+  pointer-events: none;
+  visibility: hidden;
+}
+.cm-focused > .cm-scroller > .bear-cursor-layer {
+  visibility: visible;
+  animation: bear-caret-blink 1s ease-in-out infinite;
+}
+.bear-cursor-caret {
+  border-left: var(--bear-caret-width, 2px) solid var(--bear-caret-color, #cd5853);
+  margin-left: -1px;
+  pointer-events: none;
+}
+@keyframes bear-caret-blink {
+  0%, 45%, 100% { opacity: 1; }
+  65%, 85% { opacity: 0; }
+}
+@keyframes bear-caret-blink-alt {
+  0%, 45%, 100% { opacity: 1; }
+  65%, 85% { opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cm-focused > .cm-scroller > .bear-cursor-layer {
+    animation: none;
+  }
+}
