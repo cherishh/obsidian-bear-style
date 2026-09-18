@@ -4,11 +4,9 @@ A quiet space to write. Bear-inspired typography, warm red accents, generous spa
 
 [中文说明](README.zh-CN.md) · [Download](https://github.com/cherishh/obsidian-bear-style/releases/latest) · [Demo note](examples/Bear%20Style%20Demo.md)
 
-![English demo in Obsidian: headings, text formatting, highlights, and links](docs/images/01-typography.png)
-
 This is a **CSS snippet for Obsidian's default theme**, plus a small optional desktop cursor plugin. It is not a standalone community theme. The snippet works without community plugins.
 
-> **About the screenshots:** these are real captures of the included English demo in Obsidian on macOS. Matching this setup closely also depends on fonts and optional plugins: **Highlightr** for the colored highlights, **Code Styler** for code blocks, and **Bear Cursor** for the thick red caret. See [Match the screenshots](#match-the-screenshots). Installing the CSS alone will not reproduce every detail.
+> **About the preview:** this is a full-length capture of the included English demo in Obsidian. Matching it closely also depends on fonts, **Highlightr** for colored highlights, and **Code Styler** for code blocks. The optional **Bear Cursor** adds a thick red caret while editing. See [Match the screenshots](#match-the-screenshots); installing the CSS alone will not reproduce every detail.
 
 ## Install with your AI agent
 
@@ -26,27 +24,15 @@ Ask for my vault path if needed, and tell me if anything requires my help.
 
 The agent reads the [detailed installation guide](INSTALL.md), so you don't have to copy it. For CSS only, use the [manual steps](#install-the-style).
 
-## A look around
+## Preview
 
-Eight levels of nested lists, numbered lists, tasks, and a softer place for a quote:
+One complete note, from headings to images. Captured with Obsidian's native developer-tools screenshot command at **2× pixel density (1800 × 4620)**, with the full Reading view rendered in an expanded viewport. [Open the full-resolution PNG](docs/images/demo-en.png).
 
-![Nested lists, numbered lists, tasks, and a blockquote](docs/images/02-lists.png)
-
-Quotes, callouts, and colored highlights:
-
-![Blockquotes, callouts, and Highlightr colored highlights](docs/images/03-highlights.png)
-
-Code, a table, and an image:
-
-![Code Styler code block, table, and demo illustration](docs/images/04-code-and-images.png)
-
-The optional caret in Live Preview (blink held at its visible phase for this still):
-
-![Bear Cursor in the live editor](docs/images/05-cursor.png)
+![Full English demo in Obsidian: headings, text, lists, tasks, quotes, highlights, code, table, and image](docs/images/demo-en.png)
 
 ## Install the style
 
-1. Download **`obsidian-bear-style-v1.0.0.zip`** from [Releases](https://github.com/cherishh/obsidian-bear-style/releases/latest) and extract it.
+1. Download **`obsidian-bear-style-v1.0.1.zip`** from [Releases](https://github.com/cherishh/obsidian-bear-style/releases/latest) and extract it.
 2. In Obsidian, choose the **Default** theme under **Settings → Appearance**.
 3. Under **CSS snippets**, click the folder button. Copy `snippets/bear.css` into that folder.
 4. Return to Obsidian, reload the snippet list if needed, and enable **bear**.
@@ -68,7 +54,7 @@ Without the plugin, the snippet still colors the native caret red; the operating
 
 ## Match the screenshots
 
-The captures use **Obsidian 1.13.7 on macOS**, the **Default** theme in **light mode**, and this snippet. The reading screenshots have no caret; the last image is Live Preview. No third-party plugin code, fonts, or personal vault configuration is bundled.
+The preview uses **Obsidian 1.13.7 on macOS**, the **Default** theme in **light mode**, and this snippet. It shows Reading view, so the editing caret is not visible. No third-party plugin code, fonts, or personal vault configuration is bundled.
 
 | Component | What it contributes | Setup used here |
 | --- | --- | --- |
@@ -90,7 +76,7 @@ Use fonts already available on your system, or select your own. Without the same
 
 ## Try the demo
 
-Copy both files from `examples/` into the same folder in your vault, then open **Bear Style Demo.md**. The image reference is relative, so keep `quiet-space.svg` beside the note.
+For English, copy **Bear Style Demo.md** and **quiet-space.svg** from `examples/` into the same folder in your vault. For Chinese, use **Bear 风格演示.md** and **quiet-space-zh.svg** instead. Open your chosen note in Obsidian; keep its matching SVG beside it so the relative image reference resolves.
 
 The demo covers headings H1–H6, bold, italics, strikethrough, links, highlights, eight nested list levels, numbered lists, checkboxes, blockquotes, a callout, inline code, a fenced code block, a table, and an image. It contains only sample text.
 

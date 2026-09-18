@@ -1,19 +1,17 @@
 #!/usr/bin/env python3
 """Build the release from an explicit public-file allowlist. No vault files."""
 from pathlib import Path
-import json
 from zipfile import ZIP_DEFLATED, ZipFile
 
 root = Path(__file__).resolve().parents[1]
-version = json.loads((root / "plugins/bear-cursor/manifest.json").read_text())["version"]
+version = (root / "VERSION").read_text().strip()
 files = [
-    "README.md", "README.zh-CN.md", "INSTALL.md", "LICENSE", "CHANGELOG.md",
+    "README.md", "README.zh-CN.md", "INSTALL.md", "LICENSE", "CHANGELOG.md", "VERSION",
     "snippets/bear.css", "plugins/bear-cursor/manifest.json",
     "plugins/bear-cursor/main.js", "plugins/bear-cursor/styles.css",
     "plugins/bear-cursor/README.md", "examples/Bear Style Demo.md",
-    "examples/quiet-space.svg", "docs/images/01-typography.png",
-    "docs/images/02-lists.png", "docs/images/03-highlights.png",
-    "docs/images/04-code-and-images.png", "docs/images/05-cursor.png",
+    "examples/quiet-space.svg", "examples/Bear 风格演示.md",
+    "examples/quiet-space-zh.svg", "docs/images/demo-en.png", "docs/images/demo-zh.png",
     "scripts/package.py",
 ]
 for name in files:

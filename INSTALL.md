@@ -37,8 +37,9 @@ Read the current [README](README.md), including **Match the screenshots** and co
    if an action needs the user's help, finish the independent work and explain exactly
    what the user needs to do.
 
-6. Copy the included English demo note and quiet-space.svg into a demo folder
-   in the target vault, keeping them together. Do not overwrite an existing note; reuse
+6. Copy the demo matching the user's language into a demo folder in the target
+   vault: Bear Style Demo.md + quiet-space.svg for English, or Bear 风格演示.md
+   + quiet-space-zh.svg for Chinese. Keep the chosen note and its SVG together. Do not overwrite an existing note; reuse
    identical sample files or choose a new folder when they differ. Make repeat
    runs safe: no duplicate plugin entries, snippets, or unnecessary demo copies.
 

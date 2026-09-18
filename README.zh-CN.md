@@ -2,13 +2,11 @@
 
 让 Obsidian 多一点 Bear 的感觉：舒展的排版、温暖的红色强调，以及可选的红色 **2px 光标**。
 
-[English](README.md) · [下载](https://github.com/cherishh/obsidian-bear-style/releases/latest) · [英文演示笔记](examples/Bear%20Style%20Demo.md)
-
-![Obsidian 中的英文演示：标题、文字、高亮与链接](docs/images/01-typography.png)
+[English](README.md) · [下载](https://github.com/cherishh/obsidian-bear-style/releases/latest) · [中文演示笔记](examples/Bear%20风格演示.md)
 
 这是为 **Obsidian 默认主题**编写的 CSS 代码片段，另附一个可选的桌面端光标插件。基础样式无需社区插件；本项目目前不是社区主题商店中的完整主题。
 
-> 截图是在 macOS 的 Obsidian 中实拍的。要接近截图的完整效果，还需要相同字体及可选的 **Highlightr**（彩色高亮）、**Code Styler**（代码块）和 **Bear Cursor**（加粗光标）。只安装 CSS 不会复现每一个细节。
+> 下方长图是在 Obsidian 中截取的完整中文演示。要接近截图效果，还需要相同字体及可选的 **Highlightr**（彩色高亮）、**Code Styler**（代码块）。**Bear Cursor** 则为编辑时提供加粗红色光标。只安装 CSS 不会复现每一个细节。
 
 ## 让 AI Agent 帮你安装
 
@@ -28,19 +26,13 @@ Agent 会自行阅读[详细安装指南](INSTALL.md)，无需复制长篇说明
 
 ## 看看效果
 
-![八层列表、有序列表、任务与引用](docs/images/02-lists.png)
+从标题到图片，一张长图看完整篇中文演示。使用 Obsidian 开发者工具的原生截图功能，将阅读视图完整展开后，以 **2× 像素密度（1800 × 4566）** 导出。[查看原尺寸 PNG](docs/images/demo-zh.png)。
 
-![引用、提示框和多色高亮](docs/images/03-highlights.png)
-
-![代码块、表格和图片](docs/images/04-code-and-images.png)
-
-光标截图暂时停在闪烁的可见帧，方便观察其高度和宽度。
-
-![实时阅览中的红色光标](docs/images/05-cursor.png)
+![Obsidian 完整中文演示：标题、文字、列表、任务、引用、高亮、代码、表格与图片](docs/images/demo-zh.png)
 
 ## 安装样式
 
-1. 从 [Releases](https://github.com/cherishh/obsidian-bear-style/releases/latest) 下载并解压 **`obsidian-bear-style-v1.0.0.zip`**。
+1. 从 [Releases](https://github.com/cherishh/obsidian-bear-style/releases/latest) 下载并解压 **`obsidian-bear-style-v1.0.1.zip`**。
 2. 在 Obsidian 的「设置 → 外观」中选择**默认主题**。
 3. 找到「CSS 代码片段」，点击文件夹按钮，将下载包中的 `snippets/bear.css` 放进去。
 4. 返回 Obsidian，必要时刷新列表，然后开启 **bear**。
@@ -58,7 +50,7 @@ Agent 会自行阅读[详细安装指南](INSTALL.md)，无需复制长篇说明
 
 ## 复现截图
 
-截图使用 **macOS、Obsidian 1.13.7、默认主题、浅色模式**。前四张为阅读视图，最后一张为实时阅览。仓库不附带第三方插件代码、字体或个人配置。
+截图使用 **macOS、Obsidian 1.13.7、默认主题、浅色模式**。长图展示阅读视图，因此不显示编辑光标。仓库不附带第三方插件代码、字体或个人配置。
 
 | 组件 | 作用 | 截图使用的配置 |
 | --- | --- | --- |
@@ -80,7 +72,7 @@ Code Styler 从 **Default** 预设开始：开启行号，代码块圆角 **4px*
 
 ## 试用演示笔记
 
-将 `examples/` 中的两个文件放到你仓库的同一个文件夹，打开 **Bear Style Demo.md**。图片使用相对路径，请保留旁边的 `quiet-space.svg`。
+将 `examples/` 中的 **Bear 风格演示.md** 和 **quiet-space-zh.svg** 放到你仓库的同一个文件夹，再打开中文演示笔记。图片使用相对路径，请保留配套 SVG。英文版本则使用 **Bear Style Demo.md** 和 **quiet-space.svg**。
 
 演示包含六级标题、粗体、斜体、删除线、链接、高亮、八层列表、有序列表、任务、引用、提示框、行内代码、代码块、表格及图片。全部为示例内容。
 
