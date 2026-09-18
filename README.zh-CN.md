@@ -72,8 +72,6 @@ Code Styler 从 **Default** 预设开始：开启行号，代码块圆角 **4px*
 
 使用自己系统中可用的字体即可；字体不同，字形和换行会有所差异。本项目不分发 Bear 字体，也不提供提取字体的说明。这是受 [Bear](https://bear.app) 启发的独立项目，与 Bear、Obsidian 官方无关联。
 
-**无需 Ninja Cursor、Minimal Theme Settings 或 Style Settings。**
-
 ## 试用演示笔记
 
 将 `examples/` 中的 **Bear 风格演示.md** 和 **quiet-space-zh.svg** 放到你仓库的同一个文件夹，再打开中文演示笔记。图片使用相对路径，请保留配套 SVG。英文版本则使用 **Bear Style Demo.md** 和 **quiet-space.svg**。
