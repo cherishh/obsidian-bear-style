@@ -28,6 +28,12 @@ Agent 会自行阅读[详细安装指南](INSTALL.md)，无需复制长篇说明
 
 ![Obsidian 完整中文演示：标题、文字、列表、任务、引用、高亮、代码、表格与图片](docs/images/demo-zh.png)
 
+### 光标效果
+
+可选的 Bear Cursor 插件为编辑器提供红色 **2px 光标**，高度随当前行调整。
+
+![实时阅览中，中文段落末尾的红色 Bear Cursor 光标](docs/images/cursor-zh.png)
+
 ## 安装样式
 
 1. 从 [Releases](https://github.com/cherishh/obsidian-bear-style/releases/latest) 下载并解压 **`obsidian-bear-style-v1.0.1.zip`**。
@@ -48,7 +54,7 @@ Agent 会自行阅读[详细安装指南](INSTALL.md)，无需复制长篇说明
 
 ## 复现截图
 
-截图使用 **macOS、Obsidian 1.13.7、默认主题、浅色模式**。长图展示阅读视图，因此不显示编辑光标。仓库不附带第三方插件代码、字体或个人配置。
+截图使用 **macOS、Obsidian 1.13.7、默认主题、浅色模式**。长图展示阅读视图，光标特写展示实时阅览。仓库不附带第三方插件代码、字体或个人配置。
 
 | 组件 | 作用 | 截图使用的配置 |
 | --- | --- | --- |

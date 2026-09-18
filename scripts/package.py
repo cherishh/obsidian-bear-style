@@ -12,6 +12,7 @@ files = [
     "plugins/bear-cursor/README.md", "examples/Bear Style Demo.md",
     "examples/quiet-space.svg", "examples/Bear 风格演示.md",
     "examples/quiet-space-zh.svg", "docs/images/demo-en.png", "docs/images/demo-zh.png",
+    "docs/images/cursor-en.png", "docs/images/cursor-zh.png",
     "scripts/package.py",
 ]
 for name in files:

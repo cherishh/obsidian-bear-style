@@ -28,6 +28,12 @@ The agent reads the [detailed installation guide](INSTALL.md), so you don't have
 
 ![Full English demo in Obsidian: headings, text, lists, tasks, quotes, highlights, code, table, and image](docs/images/demo-en.png)
 
+### Cursor in action
+
+The optional Bear Cursor plugin adds a red **2px caret** in the editor, sized to the current line height.
+
+![Red Bear Cursor caret at the end of an English paragraph in Live Preview](docs/images/cursor-en.png)
+
 ## Install the style
 
 1. Download **`obsidian-bear-style-v1.0.1.zip`** from [Releases](https://github.com/cherishh/obsidian-bear-style/releases/latest) and extract it.
@@ -52,7 +58,7 @@ Without the plugin, the snippet still colors the native caret red; the operating
 
 ## Match the screenshots
 
-The preview uses **Obsidian 1.13.7 on macOS**, the **Default** theme in **light mode**, and this snippet. It shows Reading view, so the editing caret is not visible. No third-party plugin code, fonts, or personal vault configuration is bundled.
+The preview uses **Obsidian 1.13.7 on macOS**, the **Default** theme in **light mode**, and this snippet. The full-length image shows Reading view; the cursor close-up shows Live Preview. No third-party plugin code, fonts, or personal vault configuration is bundled.
 
 | Component | What it contributes | Setup used here |
 | --- | --- | --- |

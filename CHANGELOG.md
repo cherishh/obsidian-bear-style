@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Add original English and Chinese cursor close-ups to the corresponding READMEs.
+
 ## 1.0.1 — 2026-09-18
 
 - Replace five partial screenshots with one full-length native 2× screenshot per README language.
