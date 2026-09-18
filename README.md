@@ -26,8 +26,6 @@ The agent reads the [detailed installation guide](INSTALL.md), so you don't have
 
 ## Preview
 
-One complete note, from headings to images. Captured with Obsidian's native developer-tools screenshot command at **2× pixel density (1800 × 4620)**, with the full Reading view rendered in an expanded viewport. [Open the full-resolution PNG](docs/images/demo-en.png).
-
 ![Full English demo in Obsidian: headings, text, lists, tasks, quotes, highlights, code, table, and image](docs/images/demo-en.png)
 
 ## Install the style
