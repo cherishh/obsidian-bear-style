@@ -76,8 +76,6 @@ For Code Styler, the screenshot setup uses the **Default** preset with line numb
 
 Use fonts already available on your system, or select your own. Without the same fonts, the style still works, but text metrics and wrapping will differ. This project does not distribute Bear's fonts or instructions for extracting them. It is an independent project inspired by [Bear](https://bear.app), not affiliated with or endorsed by Bear or Obsidian.
 
-**Ninja Cursor, Minimal Theme Settings, and Style Settings are not required.**
-
 ## Try the demo
 
 For English, copy **Bear Style Demo.md** and **quiet-space.svg** from `examples/` into the same folder in your vault. For Chinese, use **Bear 风格演示.md** and **quiet-space-zh.svg** instead. Open your chosen note in Obsidian; keep its matching SVG beside it so the relative image reference resolves.
