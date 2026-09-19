@@ -40,7 +40,7 @@ The optional Bear Cursor plugin adds a red **2px caret** in the editor, sized to
 
 ### Theme (recommended)
 
-Community directory submission is being prepared. Until it is listed, install the theme manually:
+View [Bear Style in the Obsidian Community directory](https://community.obsidian.md/themes/bear-style) for its current review status and installation availability. You can also install it manually:
 
 1. Download **`theme.css`** and **`manifest.json`** from the [latest release](https://github.com/cherishh/obsidian-bear-style/releases/latest).
 2. Create `<your vault>/.obsidian/themes/Bear Style/` and put both files directly inside it.

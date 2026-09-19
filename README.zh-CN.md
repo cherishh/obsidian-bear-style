@@ -40,7 +40,7 @@ Agent 会自行阅读[详细安装指南](INSTALL.md)，无需复制长篇说明
 
 ### 主题方式（推荐）
 
-正在准备社区主题市场提交。上架前可以手动安装：
+主题已发布到 [Obsidian 社区市场](https://community.obsidian.md/themes/bear-style)，可在页面查看当前审核状态与安装入口。也可以手动安装：
 
 1. 从[最新 Release](https://github.com/cherishh/obsidian-bear-style/releases/latest) 下载 **`theme.css`** 与 **`manifest.json`**。
 2. 创建 `<你的仓库>/.obsidian/themes/Bear Style/`，把两个文件直接放入其中。
