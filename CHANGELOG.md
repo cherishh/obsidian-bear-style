@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Refresh English and Chinese full-page screenshots and cursor close-ups with the calibrated styles, captured at 2× resolution.
+
 - Add a small trailing gap after external-link pencil icons so adjacent text does not touch the icon.
 
 - Use thin 1px Markdown separators in Bear Red Graphite's `#D9D9D9`, in live preview and reading mode.
