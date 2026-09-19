@@ -1,5 +1,7 @@
 # Bear Style
 
+![Bear Style 宣传封面：安静舒适的写作空间，展示可选插件与字体效果。](cover.png)
+
 让 Obsidian 多一点 Bear 的感觉：舒展的排版、温暖的红色强调，以及可选的红色 **2px 光标**。
 
 [English](README.md) · [下载](https://github.com/cherishh/obsidian-bear-style/releases/latest) · [中文演示笔记](examples/Bear%20风格演示.md)

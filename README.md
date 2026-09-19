@@ -1,5 +1,7 @@
 # Bear Style
 
+![Bear Style — A quiet space to write. Promotional cover with optional plugins and fonts.](cover.png)
+
 A quiet space to write. Bear-inspired typography, warm red accents, generous spacing, and an optional red **2px caret** for Obsidian.
 
 [中文说明](README.zh-CN.md) · [Download](https://github.com/cherishh/obsidian-bear-style/releases/latest) · [Demo note](examples/Bear%20Style%20Demo.md)
