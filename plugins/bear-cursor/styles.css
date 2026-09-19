@@ -9,23 +9,28 @@
   pointer-events: none;
   visibility: hidden;
 }
+
 .cm-focused > .cm-scroller > .bear-cursor-layer {
   visibility: visible;
   animation: bear-caret-blink 1s ease-in-out infinite;
 }
+
 .bear-cursor-caret {
   border-left: var(--bear-caret-width, 2px) solid var(--bear-caret-color, #DD4C4F);
   margin-left: -1px;
   pointer-events: none;
 }
+
 @keyframes bear-caret-blink {
   0%, 45%, 100% { opacity: 1; }
   65%, 85% { opacity: 0; }
 }
+
 @keyframes bear-caret-blink-alt {
   0%, 45%, 100% { opacity: 1; }
   65%, 85% { opacity: 0; }
 }
+
 @media (prefers-reduced-motion: reduce) {
   .cm-focused > .cm-scroller > .bear-cursor-layer {
     animation: none;

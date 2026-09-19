@@ -1,19 +1,19 @@
-# Obsidian Bear Style
+# Bear Style
 
 A quiet space to write. Bear-inspired typography, warm red accents, generous spacing, and an optional red **2px caret** for Obsidian.
 
 [中文说明](README.zh-CN.md) · [Download](https://github.com/cherishh/obsidian-bear-style/releases/latest) · [Demo note](examples/Bear%20Style%20Demo.md)
 
-This is a **CSS snippet for Obsidian's default theme**, plus a small optional desktop cursor plugin. It is not a standalone community theme. The snippet works without community plugins.
+A **standalone Obsidian theme**, with an equivalent CSS snippet for the default theme and an optional desktop cursor plugin. The theme works without community plugins. Install either the theme or the snippet, not both. This first theme release targets **light mode**; dark mode has basic fallbacks but has not been visually calibrated against Bear.
 
-> **About the preview:** this is a full-length capture of the included English demo in Obsidian. Matching it closely also depends on fonts, **Highlightr** for colored highlights, and **Code Styler** for code blocks. The optional **Bear Cursor** adds a thick red caret while editing. See [Match the screenshots](#match-the-screenshots); installing the CSS alone will not reproduce every detail.
+> **Screenshots show the enhanced setup, not the theme alone.** They were captured in Obsidian with **Highlightr** (additional highlight colors), **Code Styler** (code styling and line numbers), and locally installed fonts. The cursor close-ups also use **Bear Cursor** for the 2px caret. Installing the theme does **not** install these plugins or fonts. All are optional; without them, typography, wrapping, code blocks, and the caret may differ. See [Match the screenshots](#match-the-screenshots).
 
 ## Install with your AI agent
 
 Copy this into an agent with access to your local files and Obsidian, such as Codex or Claude Code:
 
 ```text
-Install the full Obsidian Bear Style setup in my vault: CSS, Bear Cursor,
+Install the full Bear Style setup in my vault: theme, Bear Cursor,
 Highlightr, Code Styler, and the demo note. Follow this guide:
 https://raw.githubusercontent.com/cherishh/obsidian-bear-style/main/INSTALL.md
 
@@ -38,17 +38,26 @@ The optional Bear Cursor plugin adds a red **2px caret** in the editor, sized to
 
 ## Install the style
 
-1. Download **`obsidian-bear-style-v1.0.1.zip`** from [Releases](https://github.com/cherishh/obsidian-bear-style/releases/latest) and extract it.
-2. In Obsidian, choose the **Default** theme under **Settings → Appearance**.
-3. Under **CSS snippets**, click the folder button. Copy `snippets/bear.css` into that folder.
-4. Return to Obsidian, reload the snippet list if needed, and enable **bear**.
-5. Set **Appearance → Accent color** to **`#DD4C4F`**. Use a **15px** text size as a starting point.
+### Theme (recommended)
 
-No build step, package manager, or theme settings plugin is needed. See Obsidian's [official CSS snippet instructions](https://help.obsidian.md/snippets).
+Community directory submission is being prepared. Until it is listed, install the theme manually:
+
+1. Download **`theme.css`** and **`manifest.json`** from the [latest release](https://github.com/cherishh/obsidian-bear-style/releases/latest).
+2. Create `<your vault>/.obsidian/themes/Bear Style/` and put both files directly inside it.
+3. Reopen **Settings → Appearance** and select **Bear Style**. Disable the **bear** snippet if it was enabled.
+4. Use **light mode**, **15px** text, and readable line length for the preview proportions. Existing font preferences are respected.
+
+The theme sets a warm red UI accent by default; an accent chosen in Appearance can override it. Use `#DD4C4F` to match the previews. Themes cannot install the optional plugins or fonts for you.
+
+### Alternative: CSS snippet
+
+Download **`obsidian-bear-style-v1.1.0.zip`** from [Releases](https://github.com/cherishh/obsidian-bear-style/releases/latest). Choose the **Default** theme, copy `snippets/bear.css` into your CSS snippets folder, and enable **bear** in **Settings → Appearance → CSS snippets**. Set the accent to `#DD4C4F`; use 15px text as a starting point. Do not enable this snippet together with the Bear Style theme.
+
+No build step, package manager, or theme settings plugin is needed to install either format. See Obsidian's [official CSS snippet instructions](https://help.obsidian.md/snippets).
 
 ### Optional: the red 2px caret
 
-1. Copy the entire `plugins/bear-cursor` folder from the download to `<your vault>/.obsidian/plugins/bear-cursor/`.
+1. Download the full ZIP from [Releases](https://github.com/cherishh/obsidian-bear-style/releases/latest), then copy its entire `plugins/bear-cursor` folder to `<your vault>/.obsidian/plugins/bear-cursor/`.
 2. Confirm it contains `manifest.json`, `main.js`, and `styles.css` directly inside that folder.
 3. Reload Obsidian. Under **Settings → Community plugins**, enable community plugins if needed, then enable **Bear Cursor**.
 
@@ -56,15 +65,15 @@ Bear Cursor is manually installed from this repository; it is not listed in the 
 
 The plugin uses CodeMirror's editor layer API to draw the primary caret. It follows the current line height, fades gently, and respects reduced-motion preferences. It makes no network requests and stores no settings. Text selections and secondary cursors remain under Obsidian's control.
 
-Without the plugin, the snippet still colors the native caret red; the operating system controls its width. Disable any other cursor replacement plugin and remove old CSS that hides the native caret.
+Without the plugin, the theme or snippet still colors the native caret red; the operating system controls its width. Disable any other cursor replacement plugin and remove old CSS that hides the native caret.
 
 ## Match the screenshots
 
-The preview uses **Obsidian 1.13.7 on macOS**, the **Default** theme in **light mode**, and this snippet. The full-length image shows Reading view; the cursor close-up shows Live Preview. No third-party plugin code, fonts, or personal vault configuration is bundled.
+The preview uses **Obsidian 1.13.7 on macOS**, the **Default** theme in **light mode**, and the shared Bear Style CSS snippet that also generates `theme.css`. The English market cover is cropped from this same enhanced setup. The full-length image shows Reading view; the cursor close-up shows Live Preview. No third-party plugin code, fonts, or personal vault configuration is bundled.
 
 | Component | What it contributes | Setup used here |
 | --- | --- | --- |
-| `bear.css` | Heading scale, spacing, list markers, quote text, rounded highlights, image borders, and caret color | Included; enable **bear** |
+| Bear Style theme / `bear.css` | Typography, lists, gray completed tasks, rounded quotes and highlights, striped tables, link pencils, and native caret color | Included; enable one format |
 | [Bear Cursor](plugins/bear-cursor/README.md) | The red 2px primary caret | Included; version 1.0.0; desktop only |
 | [Highlightr](https://github.com/chetachiezikeuzor/Highlightr-Plugin) | Green and pink highlights, plus commands to create them | Version 1.2.2; **CSS classes** method, **rounded** style; Green `#D3FFA4`, Pink `#FFB8EBA6` |
 | [Code Styler](https://github.com/mayurankv/Obsidian-Code-Styler) | Code block line numbers, syntax colors, and language border | Version 1.1.7; see settings below |
@@ -86,13 +95,13 @@ The demo covers headings H1–H6, bold, italics, strikethrough, links, highlight
 
 ## Make it yours
 
-Edit the `--bear-*` variables near the top of `snippets/bear.css`:
+Override the `--bear-*` variables in a small personal CSS snippet, so theme updates do not erase your changes:
 
 ```css
 --bear-accent: #DD4C4F;
 --bear-line-height: 1.8;
---bear-line-width: 700px;
---bear-paragraph-spacing: 1rem;
+--bear-line-width: calc(var(--font-text-size) * 51.5);
+--bear-paragraph-spacing: calc(var(--font-text-size) * var(--bear-line-height));
 --bear-caret-width: 2px;
 ```
 
@@ -102,21 +111,29 @@ Fonts and base font size stay in Obsidian's Appearance settings. The snippet adj
 
 ## Compatibility & limits
 
-- Tested with **Obsidian 1.13.7 on macOS** and the default theme. Other themes may override these rules.
+- Tested with **Obsidian 1.13.7 on macOS**, both as a standalone theme and as a snippet on the default theme. Other themes may override the snippet rules.
 - Checked in Live Preview and Reading view: heading sizes, lists, quotes, highlights, images, and code layout. The caret was checked in body text, at heading starts, after links, and beside numbered list markers, including native fallback when disabled.
 - Dark-mode variable behavior was checked; the screenshots show light mode. Windows, Linux, and physical mobile devices have not been tested.
 - The cursor plugin requires **Obsidian 1.13.7 or later** and is **desktop only**. Mobile retains its native caret. Later Obsidian versions are not automatically guaranteed compatible.
 - The plugin is designed to leave composition and Vim mode to the editor; IME candidate-window behavior and Vim mode have not been fully tested.
 
-To uninstall, disable the **bear** snippet, then delete its CSS file. Disable **Bear Cursor** before deleting its plugin folder. Remove optional third-party plugins only if you no longer use their features. No note content needs to be changed.
+To uninstall the theme, switch to **Default** and remove **Bear Style** in Appearance. For the snippet format, disable **bear**, then delete its CSS file. Disable **Bear Cursor** before deleting its plugin folder. Remove optional third-party plugins only if you no longer use their features. No note content needs to be changed.
 
 ## Development
 
-The shipped JavaScript is the source: it imports Obsidian and CodeMirror from the host application, so no bundler is needed. Build the download with Python 3:
+`snippets/bear.css` is the shared stylesheet. `theme.css` is generated from it, with a theme-specific default UI accent. Do not edit the generated file independently. The optional plugin imports Obsidian and CodeMirror from the host application; no JavaScript bundler is needed.
 
 ```sh
+npm ci
+npm run build
+npm run check
+npm run lint
 python3 scripts/package.py
 ```
+
+Lint uses the official `stylelint-config-obsidianmd` rules. Obsidian/CodeMirror host class names are allowed, and specificity-order lint is disabled for the separate editor/reading branches. Scoped `:has()` selectors retain advisory performance warnings; they support marker spacing, quote ends, image-link exclusions, and cursor fallback.
+
+Theme releases attach `theme.css` and `manifest.json` directly, with a tag exactly matching the manifest version (for example `1.1.0`). The full ZIP additionally contains the optional plugin, both demos, and documentation.
 
 The packager includes only explicitly listed public files. For bug reports, include your Obsidian version, OS, theme, relevant plugins, and a small sample note. Please do not upload your whole vault.
 

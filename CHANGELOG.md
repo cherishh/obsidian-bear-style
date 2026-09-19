@@ -1,6 +1,8 @@
 # Changelog
 
-## Unreleased
+## 1.1.0 — 2026-09-19
+
+- Add the standalone Bear Style theme, generated from the shared snippet, with a theme manifest, release assets, official CSS lint checks, and an English market cover. Keep plugin/font requirements explicit and preserve the snippet installation option.
 
 - Refresh English and Chinese full-page screenshots and cursor close-ups with the calibrated styles, captured at 2× resolution.
 

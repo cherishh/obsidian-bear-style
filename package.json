@@ -1,0 +1,14 @@
+{
+  "name": "obsidian-bear-style",
+  "version": "1.1.0",
+  "private": true,
+  "scripts": {
+    "build": "python3 scripts/build_theme.py",
+    "check": "python3 scripts/build_theme.py --check",
+    "lint": "stylelint theme.css snippets/bear.css plugins/bear-cursor/styles.css"
+  },
+  "devDependencies": {
+    "stylelint": "^17.0.0",
+    "stylelint-config-obsidianmd": "^0.1.0"
+  }
+}

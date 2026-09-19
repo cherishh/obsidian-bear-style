@@ -15,7 +15,10 @@ Read the current [README](README.md), including **Match the screenshots** and co
    otherwise have it closed before editing configuration files so changes are
    not overwritten. Do not force-quit it or discard unsaved edits.
 
-3. Install and enable bear.css. Use the Default theme, light mode, 15px text,
+3. Install theme.css and its theme manifest.json into themes/Bear Style/ and
+   select the Bear Style theme. Disable an existing bear snippet to avoid loading
+   the same style twice. If the user explicitly prefers a snippet, use bear.css
+   with the Default theme instead. Use light mode, 15px text,
    accent #DD4C4F, and readable line length to match the screenshots, unless
    the user has specified a different appearance preference. Preserve existing font
    choices. Disable conflicting appearance snippets only when necessary and
@@ -43,7 +46,7 @@ Read the current [README](README.md), including **Match the screenshots** and co
    identical sample files or choose a new folder when they differ. Make repeat
    runs safe: no duplicate plugin entries, snippets, or unnecessary demo copies.
 
-7. Reload Obsidian as needed and open the demo. Verify the snippet and plugins
+7. Reload Obsidian as needed and open the demo. Verify the chosen theme/snippet and plugins
    are actually enabled, the image resolves, colored highlights and code line
    numbers render, and the caret is visible while editing. Check a heading,
    a link, and a numbered list for duplicate carets. If you cannot inspect the
