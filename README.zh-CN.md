@@ -4,19 +4,20 @@
 
 让 Obsidian 多一点 Bear 的感觉：舒展的排版、温暖的红色强调，以及可选的红色 **2px 光标**。
 
-[English](README.md) · [下载](https://github.com/cherishh/obsidian-bear-style/releases/latest) · [中文演示笔记](examples/Bear%20风格演示.md)
+[English](README.md) · [主题商店](https://community.obsidian.md/themes/bear-style) · [下载](https://github.com/cherishh/obsidian-bear-style/releases/latest) · [中文演示笔记](examples/Bear%20风格演示.md)
 
 这是一个**独立的 Obsidian 主题**，同时保留默认主题使用的 CSS 代码片段和可选桌面端光标插件。基础主题无需社区插件；主题与代码片段二选一即可。首个主题版本以**浅色模式**为目标，暗色模式保留基础回退，但尚未与 Bear 做视觉校准。
 
 > **截图展示的是增强配置，并非只安装主题的效果。** 截图使用了 **Highlightr**（额外高亮颜色）、**Code Styler**（代码样式与行号）以及本地字体；光标特写还使用了 **Bear Cursor**。安装主题**不会自动安装插件或字体**。它们都是可选项，不安装时字形、换行、代码块和光标可能不同。具体配置见[复现截图](#复现截图)。
 
-## 让 AI Agent 帮你安装
+## 让 AI Agent 帮你安装（推荐）
 
-复制下面的提示词给能访问本地文件和 Obsidian 的 Agent，例如 Codex 或 Claude Code：
+**Bear Style 已上架官方主题商店。** 想获得截图中的完整配置，把下面的提示词复制给能访问本地文件和 Obsidian 的 Agent，例如 Codex 或 Claude Code：
 
 ```text
 请在我的 Obsidian 仓库中安装完整的 Bear Style 配置：主题、Bear Cursor、
-Highlightr、Code Styler 和演示笔记。请按照这份指南执行：
+Highlightr、Code Styler 和演示笔记。主题优先从官方商店安装。
+请按照这份指南执行：
 https://raw.githubusercontent.com/cherishh/obsidian-bear-style/main/INSTALL.md
 
 备份改动，保留我的笔记与无关设置，并验证安装效果。
@@ -24,7 +25,9 @@ https://raw.githubusercontent.com/cherishh/obsidian-bear-style/main/INSTALL.md
 需要时询问仓库路径；若有操作需要我协助，请告诉我。
 ```
 
-Agent 会自行阅读[详细安装指南](INSTALL.md)，无需复制长篇说明。只安装 CSS 可以使用[手动步骤](#安装样式)。
+Agent 会按照[安装指南](INSTALL.md)识别仓库、安装商店主题和可选插件、配置预览样式，并打开演示笔记验证。不安装字体，也不需要你先克隆代码或运行构建命令。
+
+只想要基础样式，在提示词后加一句：**「只安装主题，跳过插件和演示笔记。」** 想自己操作，可以看[手动步骤](#安装样式)。
 
 ## 看看效果
 
@@ -40,20 +43,19 @@ Agent 会自行阅读[详细安装指南](INSTALL.md)，无需复制长篇说明
 
 ## 安装样式
 
-### 主题方式（推荐）
+### 官方主题商店
 
-主题已发布到 [Obsidian 社区市场](https://community.obsidian.md/themes/bear-style)，可在页面查看当前审核状态与安装入口。也可以手动安装：
+1. 打开「**设置 → 外观 → 主题 → 管理**」，搜索 **Bear Style**，安装并使用。也可以在[商店页面](https://community.obsidian.md/themes/bear-style)点击 **Add to Obsidian**。
+2. 如果之前启用了 **bear** CSS 代码片段，请关闭它；正式主题已包含相同样式。
+3. 使用**浅色模式、15px 正文、缩减栏宽**和强调色 **`#DD4C4F`** 来接近预览比例，保留已有字体。
 
-1. 从[最新 Release](https://github.com/cherishh/obsidian-bear-style/releases/latest) 下载 **`theme.css`** 与 **`manifest.json`**。
-2. 创建 `<你的仓库>/.obsidian/themes/Bear Style/`，把两个文件直接放入其中。
-3. 重新打开「设置 → 外观」，选择 **Bear Style**。如果之前启用了 **bear** 代码片段，请将其关闭。
-4. 使用**浅色模式、15px 正文、缩减栏宽**来接近预览比例。主题保留已有字体偏好。
+主题可以独立使用。上面的 Agent 提示词还会安装可选插件，主题商店不会自动安装它们。主题更新可在「设置 → 外观」中检查；Bear Cursor 需要单独更新。
 
-主题默认使用红色强调；外观设置中手动选择的强调色可以覆盖它。使用 `#DD4C4F` 可与预览一致。主题不会自动安装可选插件和字体。
+如果商店不可用，从同一个[最新 Release](https://github.com/cherishh/obsidian-bear-style/releases/latest) 下载 **`theme.css`** 与 **`manifest.json`**，放入 `<仓库>/.obsidian/themes/Bear Style/`，再到外观设置选择 **Bear Style**。如果自定义了配置文件夹，请用实际路径代替 `.obsidian`。
 
 ### 另一种方式：CSS 代码片段
 
-从 [Releases](https://github.com/cherishh/obsidian-bear-style/releases/latest) 下载 **`obsidian-bear-style-v1.1.0.zip`**，选择 **Default 默认主题**，把 `snippets/bear.css` 放入代码片段文件夹，并在「设置 → 外观 → CSS 代码片段」中启用 **bear**。强调色设为 `#DD4C4F`，正文可从 15px 开始。不要同时启用 Bear Style 主题和这份代码片段。
+从 [Releases](https://github.com/cherishh/obsidian-bear-style/releases/latest) 下载完整的 **`obsidian-bear-style-v*.zip`** 附件，选择 **Default 默认主题**，把 `snippets/bear.css` 放入代码片段文件夹，并在「设置 → 外观 → CSS 代码片段」中启用 **bear**。强调色设为 `#DD4C4F`，正文可从 15px 开始。不要同时启用 Bear Style 主题和这份代码片段。
 
 两种方式都无需编译、包管理器或主题设置插件。也可参考 [Obsidian 官方说明](https://help.obsidian.md/snippets)。
 

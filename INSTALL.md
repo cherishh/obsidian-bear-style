@@ -1,63 +1,122 @@
 # Agent installation guide
 
-Use this guide when a user asks you to install the full Obsidian Bear Style demo setup. Follow their preferences and your tool permissions. This guide covers the complete setup; the CSS alone does not require the optional community plugins.
+This is the operational guide for an AI agent installing Bear Style into a user's
+Obsidian vault. The theme is published in the [official theme store](https://community.obsidian.md/themes/bear-style).
+Complete the installation using your available tools, rather than handing these
+steps back to the user. Follow the user's preferences and your tool permissions;
+ask for help only when information or an action is genuinely unavailable to you.
 
-Read the current [README](README.md), including **Match the screenshots** and compatibility notes. Download the latest stable release from [this repository](https://github.com/cherishh/obsidian-bear-style/releases/latest).
+The README prompt requests the **full setup**: theme, Bear Cursor, Highlightr,
+Code Styler, and a localized demo. If the user requests **theme only**, skip all
+plugins and demo files. Never install fonts in either mode.
 
-1. Identify the intended vault, its actual configuration folder (normally
-   .obsidian, but it can be customized), the user's OS, and Obsidian version. If the
-   target vault is ambiguous, ask the user which one before changing anything.
+## 1. Locate and back up
 
-2. Back up the files and settings you will change to a dated local folder
-   outside the active snippets/plugins directories. Preserve the user's notes and
-   unrelated settings. Merge configuration changes instead of replacing whole
-   JSON files. If Obsidian is running, use its settings UI or supported APIs;
-   otherwise have it closed before editing configuration files so changes are
-   not overwritten. Do not force-quit it or discard unsaved edits.
+Identify the intended vault, its actual configuration folder (normally `.obsidian`,
+but it can be customized), OS, and Obsidian version. Use available context first;
+ask for the vault path only if the target is ambiguous. Read the current
+[README](https://github.com/cherishh/obsidian-bear-style#match-the-screenshots)
+for preview settings and compatibility.
 
-3. Install theme.css and its theme manifest.json into themes/Bear Style/ and
-   select the Bear Style theme. Disable an existing bear snippet to avoid loading
-   the same style twice. If the user explicitly prefers a snippet, use bear.css
-   with the Default theme instead. Use light mode, 15px text,
-   accent #DD4C4F, and readable line length to match the screenshots, unless
-   the user has specified a different appearance preference. Preserve existing font
-   choices. Disable conflicting appearance snippets only when necessary and
-   record exactly what you changed.
+Back up every file and setting you will change to a dated local folder outside
+active theme/snippet/plugin directories. Preserve notes, fonts, and unrelated
+settings. Merge configuration instead of replacing entire JSON files. When
+Obsidian is running, prefer its settings UI or supported APIs; for direct config
+edits, save notes and close the app normally first. Do not force-quit or discard
+unsaved edits. Keep vault contents and backups local.
 
-4. On a compatible desktop installation, install and enable the included
-   Bear Cursor plugin. Check its manifest for the minimum Obsidian version.
-   Disable Ninja Cursor or another active cursor replacement if it conflicts;
-   do not uninstall unrelated plugins. On mobile or an unsupported version,
-   keep the native red caret and explain that the 2px replacement was skipped.
-   Do not upgrade Obsidian without asking the user.
+## 2. Install the published theme
 
-5. Install and enable Highlightr (highlightr-plugin) and Code Styler
-   (code-styler), then apply the screenshot settings documented in the README.
-   Use Obsidian's community plugin browser or the official upstream repositories
-   linked there. Reuse compatible installed versions; do not blindly downgrade
-   them or erase other settings. These plugins are optional for the CSS alone,
-   and are part of this requested full setup. Respect any required permission prompts;
-   if an action needs the user's help, finish the independent work and explain exactly
-   what the user needs to do.
+Prefer **Settings → Appearance → Themes → Manage → search Bear Style → Install
+and use**, or the store listing's **Add to Obsidian** entry point. Verify the
+repository is `cherishh/obsidian-bear-style`. Reuse an up-to-date installation;
+do not create a duplicate theme folder.
 
-6. Copy the demo matching the user's language into a demo folder in the target
-   vault: Bear Style Demo.md + quiet-space.svg for English, or Bear 风格演示.md
-   + quiet-space-zh.svg for Chinese. Keep the chosen note and its SVG together. Do not overwrite an existing note; reuse
-   identical sample files or choose a new folder when they differ. Make repeat
-   runs safe: no duplicate plugin entries, snippets, or unnecessary demo copies.
+If you have only filesystem tools, or the store is unavailable, use the
+[latest stable GitHub release](https://github.com/cherishh/obsidian-bear-style/releases/latest).
+Download the release assets `theme.css` and `manifest.json` from the **same tag**;
+check the manifest name, version, and `minAppVersion`. Put both directly in
+`<config>/themes/Bear Style/`, then select **Bear Style**. Never substitute a
+plugin manifest or mix a development stylesheet with a release manifest. Do not
+upgrade Obsidian without the user's agreement; report incompatibility if needed.
 
-7. Reload Obsidian as needed and open the demo. Verify the chosen theme/snippet and plugins
-   are actually enabled, the image resolves, colored highlights and code line
-   numbers render, and the caret is visible while editing. Check a heading,
-   a link, and a numbered list for duplicate carets. If you cannot inspect the
-   running app, clearly separate files installed from behavior not yet verified;
-   do not claim full success based only on copied files.
+Disable the existing `bear` snippet when switching to the theme. If the user
+explicitly requests the snippet instead, use `snippets/bear.css` from the full
+release ZIP with the **Default** theme. Enable only one format.
 
-Do not download, extract, or install any fonts. Tell the user that fonts are NOT
-included: the screenshots use Bear Sans UI / Bear Sans UI Heading for text
-and Fira Code / Roboto Mono for code. Without those already installed, their
-existing fonts will be used and letter shapes and wrapping can differ.
+For the full preview setup, apply light mode, 15px text, accent `#DD4C4F`, and
+readable line length unless the user specified otherwise. For a theme-only
+request, preserve other appearance preferences and mention these suggested
+settings. Keep existing font choices. Disable only confirmed conflicting
+appearance snippets and record the changes.
 
-Finish with a short summary of what was installed and verified, anything
-skipped or still requiring user action, the backup location, and how to undo
-your changes. Keep all vault contents and backups local.
+A newly published version may reach the website before the in-app directory.
+If the listing has no cover or README, check whether the official application
+index includes `Bear Style`, its repository, and `cover.png` before blaming the
+release files. Reopen the store after synchronization; save notes before any app
+reload. Use the release fallback if needed, and report the actual status rather
+than promising a fixed synchronization time.
+
+## 3. Add the optional components for the full setup
+
+Download the `obsidian-bear-style-v*.zip` **release asset** from the chosen stable
+release, not GitHub's automatically generated source archive. No build, npm,
+repository clone, or developer tooling is needed on the user's machine.
+
+On a compatible desktop installation, copy the ZIP's `plugins/bear-cursor/` into
+`<config>/plugins/bear-cursor/`. It must directly contain `manifest.json`,
+`main.js`, and `styles.css`. Check the plugin's own minimum version and desktop
+restriction, then enable **Bear Cursor**. On mobile or unsupported versions,
+skip it and explain that the native red caret remains. Disable Ninja Cursor or
+another active cursor replacement only if it conflicts; do not remove unrelated
+plugins. Bear Cursor is not in the community plugin directory and is updated
+manually from this repository.
+
+Install and enable **Highlightr** (`highlightr-plugin`) and **Code Styler**
+(`code-styler`) through Obsidian's community plugin browser, or use the official
+upstream repositories linked in the README when UI access is unavailable. Reuse
+compatible installed versions; do not downgrade or erase unrelated settings.
+Apply the README's highlight and code settings, adapting to the installed
+version instead of copying a whole settings file from another vault.
+
+Respect any required permission prompts. If a step needs the user's action,
+finish independent work and state exactly what remains. Files copied onto disk
+are not proof that a plugin is enabled.
+
+## 4. Add the demo and verify
+
+For the full setup, copy the demo matching the user's language into a demo folder:
+English `Bear Style Demo.md` + `quiet-space.svg`, or Chinese `Bear 风格演示.md`
++ `quiet-space-zh.svg`. Keep each note with its matching SVG. Reuse identical
+files; if an existing note differs, use a new folder rather than overwrite it.
+Repeat runs must not duplicate plugin entries, snippets, or demo copies.
+
+Verify in the running app when possible:
+
+- **Every install:** the intended theme/snippet is enabled without loading both,
+  and text, headings, lists, and the native or custom caret display correctly.
+  Check both Reading view and Live Preview without editing the user's notes.
+- **Full setup:** requested plugins are enabled; the demo image, colored
+  highlights, and code line numbers render; the red caret is visible at a
+  heading, after a link, and beside a numbered list without duplicate carets.
+- **Preservation:** backed-up notes and unrelated settings were not changed.
+
+If you cannot inspect the app, distinguish files installed from activation and
+visual behavior not yet verified. Do not claim full success from file copies.
+
+## 5. Report completion and updates
+
+Summarize what was installed and verified, anything skipped or needing user
+help, the backup location, and how to undo the specific changes.
+
+Explain that **fonts are not included or installed**. The reference captures use
+Bear Sans UI / Bear Sans UI Heading for text and Fira Code / Roboto Mono for
+code; existing system fonts can produce different letter shapes and wrapping.
+The designed cover is promotional; the README's full screenshots show the actual
+Obsidian setup.
+
+Theme updates use Obsidian's **Appearance → Check for updates**. Highlightr and
+Code Styler update through community plugins. Bear Cursor updates separately:
+back up and disable it, replace its three files from the chosen release, then
+reload and enable it. Uninstall by switching theme and disabling/removing only
+components added by this installation; restore changed settings selectively.

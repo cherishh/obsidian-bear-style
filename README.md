@@ -4,19 +4,20 @@
 
 A quiet space to write. Bear-inspired typography, warm red accents, generous spacing, and an optional red **2px caret** for Obsidian.
 
-[中文说明](README.zh-CN.md) · [Download](https://github.com/cherishh/obsidian-bear-style/releases/latest) · [Demo note](examples/Bear%20Style%20Demo.md)
+[中文说明](README.zh-CN.md) · [Theme store](https://community.obsidian.md/themes/bear-style) · [Download](https://github.com/cherishh/obsidian-bear-style/releases/latest) · [Demo note](examples/Bear%20Style%20Demo.md)
 
 A **standalone Obsidian theme**, with an equivalent CSS snippet for the default theme and an optional desktop cursor plugin. The theme works without community plugins. Install either the theme or the snippet, not both. This first theme release targets **light mode**; dark mode has basic fallbacks but has not been visually calibrated against Bear.
 
 > **Screenshots show the enhanced setup, not the theme alone.** They were captured in Obsidian with **Highlightr** (additional highlight colors), **Code Styler** (code styling and line numbers), and locally installed fonts. The cursor close-ups also use **Bear Cursor** for the 2px caret. Installing the theme does **not** install these plugins or fonts. All are optional; without them, typography, wrapping, code blocks, and the caret may differ. See [Match the screenshots](#match-the-screenshots).
 
-## Install with your AI agent
+## Install with your AI agent (recommended)
 
-Copy this into an agent with access to your local files and Obsidian, such as Codex or Claude Code:
+**Bear Style is available in the official theme store.** For the full setup shown here, copy this prompt into an agent with access to your local files and Obsidian, such as Codex or Claude Code:
 
 ```text
 Install the full Bear Style setup in my vault: theme, Bear Cursor,
-Highlightr, Code Styler, and the demo note. Follow this guide:
+Highlightr, Code Styler, and the demo note. Prefer the official theme store.
+Follow this guide:
 https://raw.githubusercontent.com/cherishh/obsidian-bear-style/main/INSTALL.md
 
 Back up changes, preserve my notes and unrelated settings, and verify the result.
@@ -24,7 +25,9 @@ Don't install fonts; explain how that affects the appearance.
 Ask for my vault path if needed, and tell me if anything requires my help.
 ```
 
-The agent reads the [detailed installation guide](INSTALL.md), so you don't have to copy it. For CSS only, use the [manual steps](#install-the-style).
+The agent follows the [installation guide](INSTALL.md): it finds your vault, installs the store theme and optional plugins, applies the preview settings, and verifies the demo. Fonts are not installed. You do not need to clone this repository or run a build.
+
+For a lighter setup, add **"Install only the theme; skip plugins and the demo."** to the prompt. Prefer doing it yourself? Use the [manual steps](#install-the-style).
 
 ## Preview
 
@@ -40,20 +43,19 @@ The optional Bear Cursor plugin adds a red **2px caret** in the editor, sized to
 
 ## Install the style
 
-### Theme (recommended)
+### Official theme store
 
-View [Bear Style in the Obsidian Community directory](https://community.obsidian.md/themes/bear-style) for its current review status and installation availability. You can also install it manually:
+1. Open **Settings → Appearance → Themes → Manage**, search **Bear Style**, then install and select it. You can also open the [store listing](https://community.obsidian.md/themes/bear-style) and choose **Add to Obsidian**.
+2. Disable the **bear** CSS snippet if you previously used it; the theme replaces it.
+3. Use **light mode**, **15px** text, readable line length, and accent **`#DD4C4F`** for the preview proportions. Existing fonts are respected.
 
-1. Download **`theme.css`** and **`manifest.json`** from the [latest release](https://github.com/cherishh/obsidian-bear-style/releases/latest).
-2. Create `<your vault>/.obsidian/themes/Bear Style/` and put both files directly inside it.
-3. Reopen **Settings → Appearance** and select **Bear Style**. Disable the **bear** snippet if it was enabled.
-4. Use **light mode**, **15px** text, and readable line length for the preview proportions. Existing font preferences are respected.
+The theme works on its own. The agent prompt above also installs the optional plugins; installing through the theme store does not. Check for theme updates in **Settings → Appearance**. Bear Cursor updates remain separate.
 
-The theme sets a warm red UI accent by default; an accent chosen in Appearance can override it. Use `#DD4C4F` to match the previews. Themes cannot install the optional plugins or fonts for you.
+If the store is unavailable, download **`theme.css`** and **`manifest.json`** from the same [latest release](https://github.com/cherishh/obsidian-bear-style/releases/latest), place both in `<vault>/.obsidian/themes/Bear Style/`, then select **Bear Style** in Appearance. Use your actual configuration folder if it is not `.obsidian`.
 
 ### Alternative: CSS snippet
 
-Download **`obsidian-bear-style-v1.1.0.zip`** from [Releases](https://github.com/cherishh/obsidian-bear-style/releases/latest). Choose the **Default** theme, copy `snippets/bear.css` into your CSS snippets folder, and enable **bear** in **Settings → Appearance → CSS snippets**. Set the accent to `#DD4C4F`; use 15px text as a starting point. Do not enable this snippet together with the Bear Style theme.
+Download the full **`obsidian-bear-style-v*.zip`** asset from [Releases](https://github.com/cherishh/obsidian-bear-style/releases/latest). Choose the **Default** theme, copy `snippets/bear.css` into your CSS snippets folder, and enable **bear** in **Settings → Appearance → CSS snippets**. Set the accent to `#DD4C4F`; use 15px text as a starting point. Do not enable this snippet together with the Bear Style theme.
 
 No build step, package manager, or theme settings plugin is needed to install either format. See Obsidian's [official CSS snippet instructions](https://help.obsidian.md/snippets).
 
