@@ -2,6 +2,22 @@
 
 ## Unreleased
 
+- Add a small trailing gap after external-link pencil icons so adjacent text does not touch the icon.
+
+- Use thin 1px Markdown separators in Bear Red Graphite's `#D9D9D9`, in live preview and reading mode.
+
+- Fix uneven live-preview list indentation by using parsed list depth instead of four-space groups; match Bear checkbox border widths and add striped, padded tables with vertical rules.
+
+- Style completed tasks with gray text and an unfilled gray checkbox, without automatic strikethrough in live preview and reading mode.
+
+- Remove gray note indentation guides. Correct the quote rule to 4px (8 physical pixels in a native 2× Bear capture), with 2px end radii.
+
+- Use Bear Red Graphite's exact accent `#DD4C4F`, cycle nested unordered-list markers through filled circle / ring / filled diamond / outline diamond, and add rounded ends to the 4px quote rules.
+
+- Match the green highlight to Bear Red Graphite (`#D3FFA4` background, `#1A3200` text), and replace external-link arrows with spaced decorative pencil icons.
+
+- Calibrate typography against native macOS Bear: heading fonts, sizes and tracking; paragraph and list spacing; note text color; and quote geometry. Preserve the measured 27px body line spacing and 2px cursor. See `docs/typography-calibration.md` for measurements and limits.
+
 - Add original English and Chinese cursor close-ups to the corresponding READMEs.
 
 ## 1.0.1 — 2026-09-18

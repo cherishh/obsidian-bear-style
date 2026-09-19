@@ -40,7 +40,7 @@ Agent 会自行阅读[详细安装指南](INSTALL.md)，无需复制长篇说明
 2. 在 Obsidian 的「设置 → 外观」中选择**默认主题**。
 3. 找到「CSS 代码片段」，点击文件夹按钮，将下载包中的 `snippets/bear.css` 放进去。
 4. 返回 Obsidian，必要时刷新列表，然后开启 **bear**。
-5. 将外观中的强调色设为 **`#cd5853`**，正文字号可以从 **15px** 开始。
+5. 将外观中的强调色设为 **`#DD4C4F`**，正文字号可以从 **15px** 开始。
 
 不需要编译、包管理器或主题设置插件。也可参考 [Obsidian 官方说明](https://help.obsidian.md/snippets)。
 
@@ -60,13 +60,13 @@ Agent 会自行阅读[详细安装指南](INSTALL.md)，无需复制长篇说明
 | --- | --- | --- |
 | `bear.css` | 标题比例、间距、列表、引用、高亮圆角、图片边框和光标颜色 | 本仓库提供 |
 | [Bear Cursor](plugins/bear-cursor/README.md) | 红色 2px 光标 | 本仓库提供，1.0.0，限桌面端 |
-| [Highlightr](https://github.com/chetachiezikeuzor/Highlightr-Plugin) | 多色高亮及高亮命令 | 1.2.2，CSS classes 模式、rounded 样式；Green `#BBFABBA6`、Pink `#FFB8EBA6` |
+| [Highlightr](https://github.com/chetachiezikeuzor/Highlightr-Plugin) | 多色高亮及高亮命令 | 1.2.2，CSS classes 模式、rounded 样式；Green `#D3FFA4`、Pink `#FFB8EBA6` |
 | [Code Styler](https://github.com/mayurankv/Obsidian-Code-Styler) | 代码块行号、语法配色和语言边框 | 1.1.7，具体设置见下方 |
 | 正文字体 | 字形和换行位置 | `Bear Sans UI, Bear Sans UI Heading`，15px；字体不随项目分发 |
 | 等宽字体 | 代码字形 | `Fira Code, Roboto Mono`；字体不随项目分发 |
-| Obsidian 外观 | 原生控件和任务框 | 强调色 `#cd5853`，开启「缩减栏宽」 |
+| Obsidian 外观 | 原生控件和任务框 | 强调色 `#DD4C4F`，开启「缩减栏宽」 |
 
-Highlightr 和 Code Styler 可在 Obsidian 社区插件中单独安装，都是可选项。基础 Markdown 高亮和代码块不依赖它们；演示中的 `hltr-green`、`hltr-pink` 彩色高亮需要 Highlightr 提供相应样式。
+Highlightr 和 Code Styler 可在 Obsidian 社区插件中单独安装，都是可选项。基础 Markdown 高亮和代码块不依赖它们；CSS 已提供 `hltr-green` 的 Bear 绿色；其他命名颜色和高亮命令由 Highlightr 提供。
 
 Code Styler 从 **Default** 预设开始：开启行号，代码块圆角 **4px**，开启语言边框并设为 **4px**，隐藏语言标签和图标，关闭行内代码样式。其余使用默认设置。后续插件版本可能呈现不同效果。
 
@@ -83,7 +83,7 @@ Code Styler 从 **Default** 预设开始：开启行号，代码块圆角 **4px*
 编辑 `snippets/bear.css` 顶部的 `--bear-*` 变量：
 
 ```css
---bear-accent: #cd5853;
+--bear-accent: #DD4C4F;
 --bear-line-height: 1.8;
 --bear-line-width: 700px;
 --bear-paragraph-spacing: 1rem;

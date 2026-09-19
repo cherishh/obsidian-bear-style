@@ -2,19 +2,43 @@
    Fonts and base font size stay in Settings > Appearance.
    Enable in Settings > Appearance > CSS snippets. */
 
+/* Bear's Heading Regular face already contains the intended heading weight.
+   Map an optional local face to semantic semibold; no font file is distributed. */
+@font-face {
+  font-family: "Bear Heading Local";
+  src: local("BearSansUIHeading-Regular");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
 /* 1. Shared values: the main place to tune the look. */
 body {
-  --bear-accent: #cd5853;
-  --bear-accent-hover: rgba(205, 88, 83, 0.9);
+  --bear-accent: #DD4C4F;
+  --bear-accent-hover: rgba(221, 76, 79, 0.9);
+  --bear-text-color: #444;
+  --bear-heading-font: "Bear Heading Local", var(--font-text);
   --bear-muted: #999;
+  --bear-task-border: #888;
+  --bear-task-done-color: #888;
+  --bear-task-done-border: #d5d5d5;
+  --bear-task-done-check: #b4b4b4;
   --bear-image-border: #d3d3d3;
+  --bear-rule-color: #d9d9d9;
+  --bear-table-border: #d9d9d9;
+  --bear-table-stripe: #F3F5F7;
   --bear-line-height: 1.8;
   --bear-table-line-height: 1.6;
   --bear-heading-line-height: 1.8;
-  --bear-line-width: 700px;
-  --bear-paragraph-spacing: 1rem;
+  --bear-line-width: calc(var(--font-text-size) * 51.5);
+  --bear-paragraph-spacing: calc(var(--font-text-size) * var(--bear-line-height));
   --bear-list-marker-gap: 0.5em;
-  --bear-quote-inset: 0.8em;
+  --bear-quote-inset: 2.2em;
+  --bear-quote-border-inset: 0.6em;
+  --bear-highlight-green: #D3FFA4;
+  --bear-highlight-green-text: #1A3200;
+  --bear-link-icon-gap: 0.3em;
+  --bear-link-icon-size: 0.85em;
   --bear-highlight-padding: 0.2em;
   --bear-highlight-radius: 0.2em;
   --bear-caret-color: var(--bear-accent);
@@ -25,7 +49,10 @@ body {
   --table-line-height: var(--bear-table-line-height);
   --file-line-width: var(--bear-line-width);
   --p-spacing: var(--bear-paragraph-spacing);
-  --list-spacing: 0.075em;
+  --heading-spacing: var(--bear-paragraph-spacing);
+  --list-spacing: 0;
+  --list-indent: 2.2em;
+  --list-indent-editing: 0.6em;
 
   --list-marker-color: var(--bear-accent);
   --text-formatting: var(--bear-accent);
@@ -38,16 +65,36 @@ body {
   --link-decoration-hover: none;
   --link-external-decoration: none;
   --link-external-decoration-hover: none;
-  --blockquote-color: var(--bear-muted);
+  --blockquote-color: var(--bear-text-color);
   --blockquote-border-thickness: 4px;
+  --blockquote-border-color: var(--bear-accent);
+  --bear-quote-radius: calc(var(--blockquote-border-thickness) / 2);
 
   /* Use the same heading scale in the editor and reading mode. */
-  --h1-size: 1.8em;
-  --h2-size: 1.462em;
-  --h3-size: 1.318em;
-  --h4-size: 1.188em;
-  --h5-size: 1.076em;
+  --h1-size: 2em;
+  --h2-size: 1.6em;
+  --h3-size: calc(19em / 15);
+  --h4-size: 1em;
+  --h5-size: 1em;
   --h6-size: 1em;
+  --h1-font: var(--bear-heading-font);
+  --h1-weight: 600;
+  --h2-font: var(--bear-heading-font);
+  --h2-weight: 600;
+  --h3-font: var(--bear-heading-font);
+  --h3-weight: 600;
+  --h4-font: var(--bear-heading-font);
+  --h4-weight: 600;
+  --h5-font: var(--bear-heading-font);
+  --h5-weight: 600;
+  --h6-font: var(--bear-heading-font);
+  --h6-weight: 600;
+  --h1-letter-spacing: 0;
+  --h2-letter-spacing: 0;
+  --h3-letter-spacing: 0;
+  --h4-letter-spacing: 0;
+  --h5-letter-spacing: 0;
+  --h6-letter-spacing: 0;
   --h1-line-height: var(--bear-heading-line-height);
   --h2-line-height: var(--bear-heading-line-height);
   --h3-line-height: var(--bear-heading-line-height);
@@ -57,30 +104,288 @@ body {
 }
 
 body.theme-dark {
+  --bear-text-color: var(--text-normal);
   --bear-muted: #aaa;
+  --bear-task-border: var(--text-muted);
+  --bear-task-done-color: var(--text-muted);
+  --bear-task-done-border: var(--background-modifier-border);
+  --bear-task-done-check: var(--text-muted);
   --bear-image-border: #4b4b4b;
+  --bear-rule-color: var(--background-modifier-border);
+  --bear-table-border: var(--background-modifier-border);
+  --bear-table-stripe: var(--background-secondary);
 }
 
-/* 2. List markers: the same spacing at every nesting level.
-   Apply the gap to the rendered marker OR its editable Markdown token, never both. */
+/* Native Bear's 1.5 setting measures 27pt at 15pt: 1.8 in CSS.
+   Keep note text color separate from the application's controls. */
+:is(.markdown-source-view.mod-cm6, .markdown-preview-view.markdown-rendered) {
+  color: var(--bear-text-color);
+}
+
+/* Native Bear uses a 1.5px open box, and a thinner 1px completed box. */
+:is(.markdown-source-view.mod-cm6, .markdown-preview-view.markdown-rendered)
+  input.task-list-item-checkbox:not(:checked) {
+  border-width: 1.5px;
+  border-color: var(--bear-task-border);
+}
+
+/* Completed tasks use Bear's muted palette without an automatic strikethrough. */
+:is(.markdown-source-view.mod-cm6, .markdown-preview-view.markdown-rendered) {
+  --checkbox-size: calc(var(--font-text-size) * 1.2);
+  --checklist-done-color: var(--bear-task-done-color);
+  --checklist-done-decoration: none;
+}
+:is(.markdown-source-view.mod-cm6, .markdown-preview-view.markdown-rendered)
+  input.task-list-item-checkbox:checked {
+  --checkbox-marker-color: var(--bear-task-done-check);
+  background-color: transparent;
+  border-color: var(--bear-task-done-border);
+}
+:is(.markdown-source-view.mod-cm6, .markdown-preview-view.markdown-rendered)
+  input.task-list-item-checkbox:checked:is(:hover, :focus-visible) {
+  border-color: var(--bear-task-done-color);
+}
+
+/* Thin note separators; keep application dividers independent. */
+:is(.markdown-source-view.mod-cm6, .markdown-preview-view.markdown-rendered) {
+  --hr-thickness: 1px;
+  --hr-color: var(--bear-rule-color);
+}
+
+/* Hide note indentation guides, including the active editor guide. */
+:is(.markdown-source-view.mod-cm6, .markdown-preview-view.markdown-rendered) {
+  --indentation-guide-width: 0px;
+  --indentation-guide-width-active: 0px;
+}
+
+/* Markdown's blank line already supplies the paragraph break in the editor. */
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-header {
+  padding-top: 0;
+}
+
+/* 2. List markers: align bullet and one-digit numbered text at about 2.2em.
+   The numbered token is wider, so its trailing gap is smaller. */
+.markdown-source-view.mod-cm6 .cm-formatting-list-ul {
+  --bear-list-marker-gap: 0.95em;
+}
+/* Apply the gap to the rendered marker OR its editable token, never both. */
 .markdown-source-view.mod-cm6 :is(.cm-formatting-list-ul, .cm-formatting-list-ol) > :is(.list-bullet, .list-number),
 .markdown-source-view.mod-cm6 :is(.cm-formatting-list-ul, .cm-formatting-list-ol):not(:has(> :is(.list-bullet, .list-number))) {
   padding-inline-end: var(--bear-list-marker-gap);
 }
 
-/* Match the native editor's quote inset; keep its measured hanging indent intact.
-   Reading-mode borders take layout space, while editor borders are overlaid. */
-.markdown-preview-view.markdown-rendered blockquote {
-  padding-inline-start: max(0px, calc(var(--bear-quote-inset) - var(--blockquote-border-thickness)));
+.markdown-preview-view.markdown-rendered :is(ul, ol) > li {
+  margin-inline-start: var(--list-indent);
+}
+.markdown-preview-view.markdown-rendered .list-bullet {
+  margin-inline-start: -1.6em;
 }
 
-/* 3. Highlightr owns highlight colors; this snippet owns padding and rounding.
+/* Four-level bullet cycle: filled circle, ring, filled diamond, outline diamond.
+   Reading mode inherits a numeric depth through list/list-item boundaries. */
+.markdown-preview-view.markdown-rendered :is(ul, ol) {
+  --bear-list-depth: calc(var(--bear-parent-list-depth, 0) + 1);
+}
+.markdown-preview-view.markdown-rendered li {
+  --bear-parent-list-depth: var(--bear-list-depth);
+}
+.markdown-preview-view.markdown-rendered .list-bullet {
+  --bear-bullet-phase: mod(var(--bear-list-depth, 1) - 1, 4);
+}
+
+/* Use parsed list depth, not groups of four spaces, for live-preview indent.
+   Two-space, four-space and tab-indented notes then share the same geometry.
+   Raw source mode keeps its literal whitespace. Depth classes cover levels 1–32. */
+.markdown-source-view.mod-cm6 .HyperMD-list-line {
+  --bear-list-depth: 1;
+  --bear-bullet-phase: mod(var(--bear-list-depth) - 1, 4);
+}
+.markdown-source-view.mod-cm6 .HyperMD-list-line-2 { --bear-list-depth: 2; }
+.markdown-source-view.mod-cm6 .HyperMD-list-line-3 { --bear-list-depth: 3; }
+.markdown-source-view.mod-cm6 .HyperMD-list-line-4 { --bear-list-depth: 4; }
+.markdown-source-view.mod-cm6 .HyperMD-list-line-5 { --bear-list-depth: 5; }
+.markdown-source-view.mod-cm6 .HyperMD-list-line-6 { --bear-list-depth: 6; }
+.markdown-source-view.mod-cm6 .HyperMD-list-line-7 { --bear-list-depth: 7; }
+.markdown-source-view.mod-cm6 .HyperMD-list-line-8 { --bear-list-depth: 8; }
+.markdown-source-view.mod-cm6 .HyperMD-list-line-9 { --bear-list-depth: 9; }
+.markdown-source-view.mod-cm6 .HyperMD-list-line-10 { --bear-list-depth: 10; }
+.markdown-source-view.mod-cm6 .HyperMD-list-line-11 { --bear-list-depth: 11; }
+.markdown-source-view.mod-cm6 .HyperMD-list-line-12 { --bear-list-depth: 12; }
+.markdown-source-view.mod-cm6 .HyperMD-list-line-13 { --bear-list-depth: 13; }
+.markdown-source-view.mod-cm6 .HyperMD-list-line-14 { --bear-list-depth: 14; }
+.markdown-source-view.mod-cm6 .HyperMD-list-line-15 { --bear-list-depth: 15; }
+.markdown-source-view.mod-cm6 .HyperMD-list-line-16 { --bear-list-depth: 16; }
+.markdown-source-view.mod-cm6 .HyperMD-list-line-17 { --bear-list-depth: 17; }
+.markdown-source-view.mod-cm6 .HyperMD-list-line-18 { --bear-list-depth: 18; }
+.markdown-source-view.mod-cm6 .HyperMD-list-line-19 { --bear-list-depth: 19; }
+.markdown-source-view.mod-cm6 .HyperMD-list-line-20 { --bear-list-depth: 20; }
+.markdown-source-view.mod-cm6 .HyperMD-list-line-21 { --bear-list-depth: 21; }
+.markdown-source-view.mod-cm6 .HyperMD-list-line-22 { --bear-list-depth: 22; }
+.markdown-source-view.mod-cm6 .HyperMD-list-line-23 { --bear-list-depth: 23; }
+.markdown-source-view.mod-cm6 .HyperMD-list-line-24 { --bear-list-depth: 24; }
+.markdown-source-view.mod-cm6 .HyperMD-list-line-25 { --bear-list-depth: 25; }
+.markdown-source-view.mod-cm6 .HyperMD-list-line-26 { --bear-list-depth: 26; }
+.markdown-source-view.mod-cm6 .HyperMD-list-line-27 { --bear-list-depth: 27; }
+.markdown-source-view.mod-cm6 .HyperMD-list-line-28 { --bear-list-depth: 28; }
+.markdown-source-view.mod-cm6 .HyperMD-list-line-29 { --bear-list-depth: 29; }
+.markdown-source-view.mod-cm6 .HyperMD-list-line-30 { --bear-list-depth: 30; }
+.markdown-source-view.mod-cm6 .HyperMD-list-line-31 { --bear-list-depth: 31; }
+.markdown-source-view.mod-cm6 .HyperMD-list-line-32 { --bear-list-depth: 32; }
+.markdown-source-view.mod-cm6.is-live-preview
+  .HyperMD-list-line:not(.HyperMD-list-line-nobullet) > .cm-hmd-list-indent {
+  width: calc((var(--bear-list-depth) - 1) * var(--list-indent));
+}
+
+:is(.markdown-source-view.mod-cm6, .markdown-preview-view.markdown-rendered) .list-bullet::after {
+  --bear-bullet-hollow: mod(var(--bear-bullet-phase, 0), 2);
+  --bear-bullet-diamond: round(down, calc(var(--bear-bullet-phase, 0) / 2), 1);
+  box-sizing: border-box;
+  width: calc(0.4em - 0.04em * var(--bear-bullet-diamond));
+  height: calc(0.4em - 0.04em * var(--bear-bullet-diamond));
+  border: 1px solid var(--list-marker-color);
+  border-radius: calc(50% * (1 - var(--bear-bullet-diamond)));
+  background-color: color-mix(in srgb, var(--list-marker-color) calc(100% * (1 - var(--bear-bullet-hollow))), transparent);
+  transform: rotate(calc(45deg * var(--bear-bullet-diamond)));
+}
+
+/* Let Obsidian measure the widened prefix for hanging/wrapped quote lines. */
+.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote > .cm-formatting-quote {
+  display: inline-block;
+  min-width: var(--bear-quote-inset);
+  text-indent: 0;
+}
+.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote:before {
+  inset-inline-start: var(--bear-quote-border-inset);
+}
+/* Nested border widgets draw the rule; the following token owns the inset. */
+.markdown-source-view.mod-cm6.is-live-preview .cm-blockquote-border {
+  width: 0;
+}
+.markdown-source-view.mod-cm6.is-live-preview .cm-blockquote-border:before {
+  transform: translateX(var(--bear-quote-border-inset));
+}
+.markdown-preview-view.markdown-rendered blockquote {
+  margin-inline-start: var(--bear-quote-border-inset);
+  position: relative;
+  border-inline-start: 0;
+  padding-inline-start: max(0px, calc(var(--bear-quote-inset) - var(--bear-quote-border-inset)));
+}
+
+/* Round the ends of a quote block, keeping continuation lines connected. */
+.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote {
+  --bear-quote-top-radius: 0px;
+  --bear-quote-bottom-radius: 0px;
+}
+.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote:not(.HyperMD-quote + .HyperMD-quote) {
+  --bear-quote-top-radius: var(--bear-quote-radius);
+}
+.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote:not(:has(+ .HyperMD-quote)) {
+  --bear-quote-bottom-radius: var(--bear-quote-radius);
+}
+.markdown-source-view.mod-cm6.is-live-preview :is(.HyperMD-quote, .cm-blockquote-border)::before {
+  width: var(--blockquote-border-thickness);
+  border-inline-start: 0;
+  background-color: var(--blockquote-border-color);
+  border-radius: var(--bear-quote-top-radius) var(--bear-quote-top-radius) var(--bear-quote-bottom-radius) var(--bear-quote-bottom-radius);
+}
+.markdown-preview-view.markdown-rendered blockquote::before {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  width: var(--blockquote-border-thickness);
+  border-radius: var(--bear-quote-radius);
+  background-color: var(--blockquote-border-color);
+  pointer-events: none;
+}
+
+/* 3. Highlight geometry; the green class matches Bear Red Graphite.
+   Highlightr continues to own the other named highlight colors.
    Scope to note content, including live-preview callouts. */
 :is(.markdown-source-view.mod-cm6, .markdown-preview-view.markdown-rendered) :is(mark, span.cm-highlight) {
   padding: var(--bear-highlight-padding);
   border-radius: var(--bear-highlight-radius);
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
+}
+
+/* Opaque colors match Bear's theme source, rather than a transparent tint. */
+:is(.markdown-source-view.mod-cm6, .markdown-preview-view.markdown-rendered) mark.hltr-green {
+  background-color: var(--bear-highlight-green);
+  color: var(--bear-highlight-green-text);
+}
+
+/* Decorative pencil after external links. The live editor uses an empty
+   external-link span; reading mode uses an anchor. Neither note text nor
+   the existing link action needs to change. */
+:is(.markdown-source-view.mod-cm6, .markdown-preview-view.markdown-rendered) .external-link:not(:has(img)) {
+  background-image: none;
+  padding-inline-end: 0;
+}
+:is(.markdown-source-view.mod-cm6, .markdown-preview-view.markdown-rendered) .external-link:not(:has(img))::after {
+  content: "";
+  display: inline-block;
+  width: var(--bear-link-icon-size);
+  height: var(--bear-link-icon-size);
+  margin-inline-start: var(--bear-link-icon-gap);
+  margin-inline-end: var(--bear-link-icon-gap);
+  vertical-align: -0.05em;
+  background-color: var(--link-external-color);
+  opacity: 0.6;
+  mask: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.8%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22m14.8%204.2%205%205M4%2020l1.1-5.1L16.6%203.4a1.8%201.8%200%200%201%202.6%200l1.4%201.4a1.8%201.8%200%200%201%200%202.6L9.1%2018.9%204%2020Z%22%2F%3E%3Cpath%20d%3D%22M13%2021h7%22%2F%3E%3C%2Fsvg%3E") center / contain no-repeat;
+  pointer-events: none;
+}
+
+/* Bear-like Markdown tables: alternating rows, vertical rules, soft corners.
+   Keep explicit Markdown column alignment and the native table editing controls. */
+:is(.markdown-source-view.mod-cm6 .cm-table-widget, .markdown-preview-view.markdown-rendered) table {
+  --table-border-color: var(--bear-table-border);
+  --table-border-width: 0px;
+  --table-header-border-width: 0px;
+  --table-column-first-border-width: 0px;
+  --table-column-last-border-width: 0px;
+  --table-row-last-border-width: 0px;
+  --table-line-height: var(--bear-line-height);
+  --table-header-background: var(--bear-table-stripe);
+  --table-header-background-hover: var(--bear-table-stripe);
+  --table-background: transparent;
+  --table-row-alt-background: transparent;
+  --table-row-alt-background-hover: transparent;
+  --table-column-alt-background: transparent;
+  --table-header-color: var(--bear-text-color);
+  border: 1px solid var(--bear-table-border);
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 3px;
+}
+:is(.markdown-source-view.mod-cm6 .cm-table-widget, .markdown-preview-view.markdown-rendered) table :is(th, td) {
+  border-inline-end: 1px solid var(--bear-table-border);
+  line-height: var(--bear-line-height);
+}
+:is(.markdown-source-view.mod-cm6 .cm-table-widget, .markdown-preview-view.markdown-rendered) table :is(th, td):last-child {
+  border-inline-end-width: 0;
+}
+:is(.markdown-source-view.mod-cm6 .cm-table-widget, .markdown-preview-view.markdown-rendered) table :is(th, td):not([align]) {
+  text-align: center;
+}
+:is(.markdown-source-view.mod-cm6 .cm-table-widget, .markdown-preview-view.markdown-rendered) table tbody tr:nth-child(even) {
+  background-color: var(--bear-table-stripe);
+}
+.markdown-preview-view.markdown-rendered table :is(th, td),
+.markdown-source-view.mod-cm6 .cm-table-widget .table-cell-wrapper {
+  padding: 0.4em 0.8em;
+}
+:is(.markdown-source-view.mod-cm6 .cm-table-widget, .markdown-preview-view.markdown-rendered) table thead tr:first-child th:first-child {
+  border-start-start-radius: 2px;
+}
+:is(.markdown-source-view.mod-cm6 .cm-table-widget, .markdown-preview-view.markdown-rendered) table thead tr:first-child th:last-child {
+  border-start-end-radius: 2px;
+}
+:is(.markdown-source-view.mod-cm6 .cm-table-widget, .markdown-preview-view.markdown-rendered) table tbody tr:last-child td:first-child {
+  border-end-start-radius: 2px;
+}
+:is(.markdown-source-view.mod-cm6 .cm-table-widget, .markdown-preview-view.markdown-rendered) table tbody tr:last-child td:last-child {
+  border-end-end-radius: 2px;
 }
 
 /* 4. Images and secondary text: do not style app or plugin UI images. */

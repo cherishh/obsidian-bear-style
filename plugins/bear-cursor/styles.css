@@ -14,7 +14,7 @@
   animation: bear-caret-blink 1s ease-in-out infinite;
 }
 .bear-cursor-caret {
-  border-left: var(--bear-caret-width, 2px) solid var(--bear-caret-color, #cd5853);
+  border-left: var(--bear-caret-width, 2px) solid var(--bear-caret-color, #DD4C4F);
   margin-left: -1px;
   pointer-events: none;
 }

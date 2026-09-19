@@ -40,7 +40,7 @@ The optional Bear Cursor plugin adds a red **2px caret** in the editor, sized to
 2. In Obsidian, choose the **Default** theme under **Settings → Appearance**.
 3. Under **CSS snippets**, click the folder button. Copy `snippets/bear.css` into that folder.
 4. Return to Obsidian, reload the snippet list if needed, and enable **bear**.
-5. Set **Appearance → Accent color** to **`#cd5853`**. Use a **15px** text size as a starting point.
+5. Set **Appearance → Accent color** to **`#DD4C4F`**. Use a **15px** text size as a starting point.
 
 No build step, package manager, or theme settings plugin is needed. See Obsidian's [official CSS snippet instructions](https://help.obsidian.md/snippets).
 
@@ -64,13 +64,13 @@ The preview uses **Obsidian 1.13.7 on macOS**, the **Default** theme in **light 
 | --- | --- | --- |
 | `bear.css` | Heading scale, spacing, list markers, quote text, rounded highlights, image borders, and caret color | Included; enable **bear** |
 | [Bear Cursor](plugins/bear-cursor/README.md) | The red 2px primary caret | Included; version 1.0.0; desktop only |
-| [Highlightr](https://github.com/chetachiezikeuzor/Highlightr-Plugin) | Green and pink highlights, plus commands to create them | Version 1.2.2; **CSS classes** method, **rounded** style; Green `#BBFABBA6`, Pink `#FFB8EBA6` |
+| [Highlightr](https://github.com/chetachiezikeuzor/Highlightr-Plugin) | Green and pink highlights, plus commands to create them | Version 1.2.2; **CSS classes** method, **rounded** style; Green `#D3FFA4`, Pink `#FFB8EBA6` |
 | [Code Styler](https://github.com/mayurankv/Obsidian-Code-Styler) | Code block line numbers, syntax colors, and language border | Version 1.1.7; see settings below |
 | Text font | Letter shapes and line wrapping | `Bear Sans UI, Bear Sans UI Heading`, 15px; fonts are **not included** |
 | Monospace font | Code letter shapes | `Fira Code, Roboto Mono`; fonts are **not included** |
-| Obsidian appearance | Task checkboxes and other native accents | Accent `#cd5853`, readable line length on |
+| Obsidian appearance | Task checkboxes and other native accents | Accent `#DD4C4F`, readable line length on |
 
-Install **Highlightr** and **Code Styler** separately through Obsidian's community plugin browser. They are optional: basic Markdown highlights and code blocks still work without them. The demo's `<mark class="hltr-green">` and `hltr-pink` colors require Highlightr's corresponding classes.
+Install **Highlightr** and **Code Styler** separately through Obsidian's community plugin browser. They are optional: basic Markdown highlights and code blocks still work without them. The snippet supplies Bear's green for `<mark class="hltr-green">`; Highlightr supplies the other named colors and highlighting commands.
 
 For Code Styler, the screenshot setup uses the **Default** preset with line numbers enabled, code block radius **4px**, language border enabled at **4px**, language tag and icon hidden, and inline-code styling disabled. Other settings use the plugin defaults. Later plugin versions may render differently.
 
@@ -87,7 +87,7 @@ The demo covers headings H1–H6, bold, italics, strikethrough, links, highlight
 Edit the `--bear-*` variables near the top of `snippets/bear.css`:
 
 ```css
---bear-accent: #cd5853;
+--bear-accent: #DD4C4F;
 --bear-line-height: 1.8;
 --bear-line-width: 700px;
 --bear-paragraph-spacing: 1rem;

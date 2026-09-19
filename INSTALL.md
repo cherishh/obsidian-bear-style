@@ -16,7 +16,7 @@ Read the current [README](README.md), including **Match the screenshots** and co
    not overwritten. Do not force-quit it or discard unsaved edits.
 
 3. Install and enable bear.css. Use the Default theme, light mode, 15px text,
-   accent #cd5853, and readable line length to match the screenshots, unless
+   accent #DD4C4F, and readable line length to match the screenshots, unless
    the user has specified a different appearance preference. Preserve existing font
    choices. Disable conflicting appearance snippets only when necessary and
    record exactly what you changed.
