@@ -69,7 +69,7 @@ Without the plugin, the theme or snippet still colors the native caret red; the 
 
 ## Match the screenshots
 
-The preview uses **Obsidian 1.13.7 on macOS**, the **Default** theme in **light mode**, and the shared Bear Style CSS snippet that also generates `theme.css`. The English market cover is cropped from this same enhanced setup. The full-length image shows Reading view; the cursor close-up shows Live Preview. No third-party plugin code, fonts, or personal vault configuration is bundled.
+The preview uses **Obsidian 1.13.7 on macOS**, the **Default** theme in **light mode**, and the shared Bear Style CSS snippet that also generates `theme.css`. The English marketplace cover is a designed promotional illustration based on this enhanced setup; the full README screenshots are actual Obsidian captures. The full-length image shows Reading view; the cursor close-up shows Live Preview. No third-party plugin code, fonts, or personal vault configuration is bundled.
 
 | Component | What it contributes | Setup used here |
 | --- | --- | --- |
