@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.2 — 2026-09-20
+
+- Style HTML underlines with the Bear accent color and a 2px underline offset, preserving the text color.
+
 ## 1.1.1 — 2026-09-20
 
 - Replace decorative pencil icons after external links with an external-link arrow, preserving the existing color, size, spacing, and link behavior.

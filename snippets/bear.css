@@ -330,6 +330,12 @@ body.theme-dark {
   color: var(--bear-highlight-green-text);
 }
 
+/* Keep underlined text unchanged; tint only the HTML underline. */
+:is(.markdown-source-view.mod-cm6, .markdown-preview-view.markdown-rendered) u {
+  text-decoration-color: var(--bear-accent);
+  text-underline-offset: 2px;
+}
+
 /* External-link arrow after external links. The live editor uses an empty
    external-link span; reading mode uses an anchor. Neither note text nor
    the existing link action needs to change. */
