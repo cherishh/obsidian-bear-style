@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.4 — 2026-09-20
+
+- Update the optional Bear Cursor plugin to 1.0.1. Fix a visually misplaced caret after pasting wrapped text into a new quote by redrawing after Obsidian adjusts the hanging indent.
+- Lighten strikethrough text and increase the fourth-level heading size.
+- Existing Bear Cursor users must replace the plugin files from the full ZIP and reload the plugin; updating the theme alone does not update the optional cursor plugin.
+
 ## 1.1.3 — 2026-09-20
 
 - Show the external-link icon after bare URLs in Live Preview, matching Markdown links without adding duplicate icons to their destinations.

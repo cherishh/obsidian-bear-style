@@ -78,7 +78,7 @@ The preview uses **Obsidian 1.13.7 on macOS**, the **Default** theme in **light 
 | Component | What it contributes | Setup used here |
 | --- | --- | --- |
 | Bear Style theme / `bear.css` | Typography, lists, gray completed tasks, rounded quotes and highlights, striped tables, external-link icons, and native caret color | Included; enable one format |
-| [Bear Cursor](plugins/bear-cursor/README.md) | The red 2px primary caret | Included; version 1.0.0; desktop only |
+| [Bear Cursor](plugins/bear-cursor/README.md) | The red 2px primary caret | Included; version 1.0.1; desktop only |
 | [Highlightr](https://github.com/chetachiezikeuzor/Highlightr-Plugin) | Green and pink highlights, plus commands to create them | Version 1.2.2; **CSS classes** method, **rounded** style; Green `#D3FFA4`, Pink `#FFB8EBA6` |
 | [Code Styler](https://github.com/mayurankv/Obsidian-Code-Styler) | Code block line numbers, syntax colors, and language border | Version 1.1.7; see settings below |
 | Text font | Letter shapes and line wrapping | `Bear Sans UI, Bear Sans UI Heading`, 15px; fonts are **not included** |

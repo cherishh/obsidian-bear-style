@@ -74,7 +74,7 @@ Agent 会按照[安装指南](INSTALL.md)识别仓库、安装商店主题和可
 | 组件 | 作用 | 截图使用的配置 |
 | --- | --- | --- |
 | Bear Style 主题 / `bear.css` | 排版、列表、灰色完成项、圆角引用与高亮、条纹表格、外部链接图标和原生光标颜色 | 本仓库提供，二选一 |
-| [Bear Cursor](plugins/bear-cursor/README.md) | 红色 2px 光标 | 本仓库提供，1.0.0，限桌面端 |
+| [Bear Cursor](plugins/bear-cursor/README.md) | 红色 2px 光标 | 本仓库提供，1.0.1，限桌面端 |
 | [Highlightr](https://github.com/chetachiezikeuzor/Highlightr-Plugin) | 多色高亮及高亮命令 | 1.2.2，CSS classes 模式、rounded 样式；Green `#D3FFA4`、Pink `#FFB8EBA6` |
 | [Code Styler](https://github.com/mayurankv/Obsidian-Code-Styler) | 代码块行号、语法配色和语言边框 | 1.1.7，具体设置见下方 |
 | 正文字体 | 字形和换行位置 | `Bear Sans UI, Bear Sans UI Heading`，15px；字体不随项目分发 |

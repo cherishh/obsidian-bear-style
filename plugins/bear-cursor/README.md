@@ -6,6 +6,8 @@ Requires Obsidian 1.13.7 or later. Tested on macOS with 1.13.7. See the reposito
 
 `RectangleMarker.forRange` supplies editor-relative geometry; the marker is extended to the current line height. CodeMirror owns positioning and layer lifecycle. CSS hides the native caret only in a focused editor with a replacement marker, so disabling the plugin restores the native caret automatically.
 
+Obsidian sometimes adjusts a quote or list's hanging indent after drawing the caret. The plugin watches line style changes and asks CodeMirror to redraw, keeping the caret at the insertion point after pasting wrapped text. This does not change the text, selection, or undo history.
+
 The optional [bear.css](../../snippets/bear.css) snippet exposes:
 
 ```css
