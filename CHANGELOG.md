@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.1 — 2026-09-20
+
+- Replace decorative pencil icons after external links with an external-link arrow, preserving the existing color, size, spacing, and link behavior.
+
 ## 1.1.0 — 2026-09-19
 
 - Add the standalone Bear Style theme, generated from the shared snippet, with a theme manifest, release assets, official CSS lint checks, and an English market cover. Keep plugin/font requirements explicit and preserve the snippet installation option.
