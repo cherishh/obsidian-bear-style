@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.3 — 2026-09-20
+
+- Show the external-link icon after bare URLs in Live Preview, matching Markdown links without adding duplicate icons to their destinations.
+
 ## 1.1.2 — 2026-09-20
 
 - Style HTML underlines with the Bear accent color and a 2px underline offset, preserving the text color.
