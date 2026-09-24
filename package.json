@@ -1,6 +1,6 @@
 {
   "name": "obsidian-bear-style",
-  "version": "1.1.4",
+  "version": "1.2.0",
   "private": true,
   "scripts": {
     "build": "python3 scripts/build_theme.py",

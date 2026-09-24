@@ -4,6 +4,8 @@
 
 ![Bear Style Dark Graphite 暗色海报：真实 Obsidian 正文、列表、引用与表格。](cover-dark-editorial.png)
 
+![Closer look：放大查看真实 Obsidian 字体、绿色高亮与外链图标。](cover-closer-look.png)
+
 让 Obsidian 多一点 Bear 的感觉：舒展的排版、温暖的红色强调，以及可选的红色 **2px 光标**。
 
 [English](README.md) · [主题商店](https://community.obsidian.md/themes/bear-style) · [下载](https://github.com/cherishh/obsidian-bear-style/releases/latest) · [中文演示笔记](examples/Bear%20风格演示.md)

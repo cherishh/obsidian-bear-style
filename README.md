@@ -4,6 +4,8 @@
 
 ![Bear Style Dark Graphite — real Obsidian text, lists, quotes, and tables.](cover-dark-editorial.png)
 
+![Closer look — enlarged real Obsidian typography, green highlight, and external-link icon.](cover-closer-look.png)
+
 A quiet space to write. Bear-inspired typography, warm red accents, generous spacing, and an optional red **2px caret** for Obsidian.
 
 [中文说明](README.zh-CN.md) · [Theme store](https://community.obsidian.md/themes/bear-style) · [Download](https://github.com/cherishh/obsidian-bear-style/releases/latest) · [Demo note](examples/Bear%20Style%20Demo.md)

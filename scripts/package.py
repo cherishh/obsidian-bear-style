@@ -12,7 +12,7 @@ subprocess.run([sys.executable, str(root / "scripts/build_theme.py"), "--check"]
 assert json.loads((root / "manifest.json").read_text())["version"] == version
 files = [
     "README.md", "README.zh-CN.md", "INSTALL.md", "LICENSE", "CHANGELOG.md", "VERSION",
-    "theme.css", "manifest.json", "versions.json", "cover.png", "cover-dark-editorial.png",
+    "theme.css", "manifest.json", "versions.json", "cover.png", "cover-dark-editorial.png", "cover-closer-look.png",
     "docs/typography-calibration.md", "scripts/build_theme.py",
     "package.json", "package-lock.json", ".stylelintrc.json",
     "snippets/bear.css", "plugins/bear-cursor/manifest.json",

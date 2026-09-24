@@ -1,8 +1,11 @@
 # Changelog
 
-## Unreleased
+## 1.2.0 — 2026-09-24
 
 - Add Bear Dark Graphite dark mode with native Bear colors for text, headings, links, highlights, code, tables, and interface surfaces. Adapt optional Code Styler backgrounds and Highlightr classes while preserving the light palette.
+
+- Keep explicitly green highlights green in dark mode.
+- Refresh the marketplace and README posters with real light/dark screenshots and add a Closer look poster. Preserve the original cover for rollback.
 
 ## 1.1.4 — 2026-09-20
 
