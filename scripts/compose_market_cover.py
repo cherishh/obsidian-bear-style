@@ -9,6 +9,15 @@ base=Image.open(root/'assets/market-cover/original-cover.png').convert('RGB')
 # Keep the original left branding; remove the old right card using its blank backdrop.
 backdrop=base.crop((630,0,1536,115)).resize((906,1024),Image.Resampling.BICUBIC)
 base.paste(backdrop,(630,0))
+if mode == 'light':
+    # Preserve the original Bear letterforms and antialiasing, using Red Graphite.
+    for y in range(245, 420):
+        for x in range(65, 520):
+            rgb=base.getpixel((x,y))
+            tone=sum(rgb)/3
+            if tone < 240:
+                alpha=min(1, (248-tone)/190)
+                base.putpixel((x,y), tuple(round(248*(1-alpha)+c*alpha) for c in (221,76,79)))
 if mode == 'dark':
     # Recolor only the original branding; preserve its exact raster letterforms.
     # The document screenshot below is never recolored.

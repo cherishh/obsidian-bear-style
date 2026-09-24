@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.2.1 — 2026-09-24
+
+- Use Bear Red Graphite’s exact red (`#DD4C4F`) for “Bear” on the main marketplace and README cover. Preserve the original cover for rollback.
+- Theme styling and the optional Bear Cursor plugin are unchanged.
+
 ## 1.2.0 — 2026-09-24
 
 - Add Bear Dark Graphite dark mode with native Bear colors for text, headings, links, highlights, code, tables, and interface surfaces. Adapt optional Code Styler backgrounds and Highlightr classes while preserving the light palette.
