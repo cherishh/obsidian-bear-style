@@ -1,6 +1,8 @@
 # Bear Style
 
-![Bear Style — A quiet space to write. Promotional cover with optional plugins and fonts.](cover.png)
+![Bear Style light mode — real Obsidian text, lists, quotes, and tables.](cover.png)
+
+![Bear Style Dark Graphite — real Obsidian text, lists, quotes, and tables.](cover-dark-editorial.png)
 
 A quiet space to write. Bear-inspired typography, warm red accents, generous spacing, and an optional red **2px caret** for Obsidian.
 
@@ -73,7 +75,7 @@ Without the plugin, the theme or snippet still colors the native caret red; the 
 
 ## Match the screenshots
 
-The preview uses **Obsidian 1.13.7 on macOS**, the **Default** theme in **light mode**, and the shared Bear Style CSS snippet that also generates `theme.css`. The English marketplace cover is a designed promotional illustration based on this enhanced setup; the full README screenshots are actual Obsidian captures. The full-length image shows Reading view; the cursor close-up shows Live Preview. No third-party plugin code, fonts, or personal vault configuration is bundled.
+The covers use real **Obsidian 1.13.7 on macOS** captures in light and dark mode, composed with promotional typography. The note text, colors, and icons come directly from Obsidian. The full-length screenshots use the **Default** theme in **light mode** with the shared Bear Style CSS snippet that also generates `theme.css`. The full-length image shows Reading view; the cursor close-up shows Live Preview. No third-party plugin code, fonts, or personal vault configuration is bundled.
 
 | Component | What it contributes | Setup used here |
 | --- | --- | --- |
@@ -117,7 +119,7 @@ Fonts, base font size, and light/dark mode stay in Obsidian's Appearance setting
 
 - Tested with **Obsidian 1.13.7 on macOS**, both as a standalone theme and as a snippet on the default theme. Other themes may override the snippet rules.
 - Checked in Live Preview and Reading view: heading sizes, lists, quotes, highlights, images, and code layout. The caret was checked in body text, at heading starts, after links, and beside numbered list markers, including native fallback when disabled.
-- Dark mode was checked in Live Preview and Reading view against native Bear Dark Graphite on macOS; the screenshots above show light mode. Windows, Linux, and physical mobile devices have not been tested.
+- Dark mode was checked in Live Preview and Reading view against native Bear Dark Graphite on macOS; the covers show both modes, while the full-length screenshots show light mode. Windows, Linux, and physical mobile devices have not been tested.
 - The cursor plugin requires **Obsidian 1.13.7 or later** and is **desktop only**. Mobile retains its native caret. Later Obsidian versions are not automatically guaranteed compatible.
 - The plugin is designed to leave composition and Vim mode to the editor; IME candidate-window behavior and Vim mode have not been fully tested.
 
