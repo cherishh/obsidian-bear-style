@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Add Bear Dark Graphite dark mode with native Bear colors for text, headings, links, highlights, code, tables, and interface surfaces. Adapt optional Code Styler backgrounds and Highlightr classes while preserving the light palette.
+
 ## 1.1.4 — 2026-09-20
 
 - Update the optional Bear Cursor plugin to 1.0.1. Fix a visually misplaced caret after pasting wrapped text into a new quote by redrawing after Obsidian adjusts the hanging indent.

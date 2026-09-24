@@ -107,18 +107,116 @@ body {
   --h6-line-height: var(--bear-heading-line-height);
 }
 
+/* Bear Dark Graphite: colors from the installed Bear theme, not an inversion
+   of Red Graphite. Keep this palette scoped so light mode is unchanged. */
 body.theme-dark {
-  --bear-text-color: var(--text-normal);
-  --bear-muted: #aaa;
-  --bear-strikethrough-color: var(--text-faint);
-  --bear-task-border: var(--text-muted);
-  --bear-task-done-color: var(--text-muted);
-  --bear-task-done-border: var(--background-modifier-border);
-  --bear-task-done-check: var(--text-muted);
-  --bear-image-border: #4b4b4b;
-  --bear-rule-color: var(--background-modifier-border);
-  --bear-table-border: var(--background-modifier-border);
-  --bear-table-stripe: var(--background-secondary);
+  --bear-accent: #44a2e5;
+  --bear-accent-hover: rgb(68 162 229 / 90%);
+  --bear-text-color: #dfe0e0;
+  --bear-muted: #a2a3a4;
+  --bear-strikethrough-color: #a2a3a4;
+  --bear-task-border: #a2a3a4;
+  --bear-task-done-color: #a2a3a4;
+  --bear-task-done-border: #525354;
+  --bear-task-done-check: #a2a3a4;
+  --bear-image-border: #525354;
+  --bear-rule-color: #525354;
+  --bear-table-border: #525354;
+  --bear-table-stripe: #2e2f30;
+  --bear-highlight-green: #355f3a;
+  --bear-highlight-green-text: #fff;
+  --background-primary: #1d1e1f;
+  --background-primary-alt: #2e2f30;
+  --background-secondary: #2c2d2f;
+  --background-secondary-alt: #2c2d2f;
+  --background-modifier-border: #525354;
+  --background-modifier-border-hover: #a2a3a4;
+  --background-modifier-border-focus: var(--bear-accent);
+  --background-modifier-hover: rgb(69 70 71 / 50%);
+  --background-modifier-form-field: #2e2f30;
+  --text-normal: var(--bear-text-color);
+  --text-muted: #a2a3a4;
+  --text-faint: #7f8c97;
+  --text-accent: var(--bear-accent);
+  --text-accent-hover: var(--bear-accent-hover);
+  --text-on-accent: #1d1e1f;
+  --text-selection: #454d56;
+  --text-highlight-bg: #215176;
+  --interactive-normal: #2e2f30;
+  --interactive-hover: #454647;
+  --interactive-accent: var(--bear-accent);
+  --interactive-accent-hover: var(--bear-accent-hover);
+  --interactive-accent-rgb: 68, 162, 229;
+  --link-color: var(--bear-accent);
+  --link-color-hover: var(--bear-accent-hover);
+  --h1-color: #ccdbe5;
+  --h2-color: #ccdbe5;
+  --h3-color: #ccdbe5;
+  --h4-color: #ccdbe5;
+  --h5-color: #ccdbe5;
+  --h6-color: #ccdbe5;
+  --inline-title-color: #ccdbe5;
+  --code-normal: #dfe0e0;
+  --code-background: #2e2f30;
+  --code-comment: #7f8c97;
+  --code-important: #00a1d8;
+  --code-operator: #70b8d7;
+  --code-property: #17a8db;
+  --code-punctuation: #dfe0e0;
+  --code-string: #e6945e;
+  --code-tag: #70b8d7;
+  --code-value: #e6945e;
+  --code-keyword: #70b8d7;
+  --code-function: #aac97f;
+  --tag-color: #dfe0e0;
+  --tag-color-hover: #fff;
+  --tag-background: #454647;
+  --tag-background-hover: #525354;
+  --nav-item-color: #a5a6a6;
+  --nav-item-color-active: #d9d8da;
+  --nav-item-background-active: #535354;
+  --divider-color: #2c2d2f;
+  --titlebar-background: #1d1e1f;
+  --titlebar-background-focused: #1d1e1f;
+}
+
+/* Optional Code Styler integration. Its backgrounds otherwise override the
+   native code palette, including when the plugin uses a light preset. */
+body.theme-dark :is(.markdown-source-view.mod-cm6, .markdown-preview-view.markdown-rendered) {
+  --code-styler-codeblock-background-colour: var(--code-background);
+  --code-styler-inline-background-colour: var(--code-background);
+  --code-styler-inline-colour: var(--code-normal);
+  --code-styler-gutter-background-colour: var(--code-background);
+  --code-styler-gutter-text-colour: var(--code-comment);
+  --code-styler-header-background-colour: var(--code-background);
+  --code-styler-header-text-colour: var(--text-muted);
+  --code-styler-header-separator-colour: var(--background-modifier-border);
+}
+
+/* Match Dark Graphite's named highlights without changing saved note markup. */
+body.theme-dark :is(.markdown-source-view.mod-cm6, .markdown-preview-view.markdown-rendered) :is(mark, span.cm-highlight) {
+  background-color: var(--text-highlight-bg);
+  color: #fff;
+}
+
+body.theme-dark :is(.markdown-source-view.mod-cm6, .markdown-preview-view.markdown-rendered) mark:is(.hltr-red, .hltr-pink) {
+  background-color: #683735;
+}
+
+body.theme-dark :is(.markdown-source-view.mod-cm6, .markdown-preview-view.markdown-rendered) mark.hltr-blue {
+  background-color: #215075;
+}
+
+body.theme-dark :is(.markdown-source-view.mod-cm6, .markdown-preview-view.markdown-rendered) mark.hltr-green {
+  background-color: var(--bear-highlight-green);
+}
+
+body.theme-dark :is(.markdown-source-view.mod-cm6, .markdown-preview-view.markdown-rendered) mark.hltr-yellow {
+  background-color: #66522e;
+}
+
+body.theme-dark :is(.markdown-source-view.mod-cm6, .markdown-preview-view.markdown-rendered) mark.hltr-purple {
+  background-color: #6d487f;
 }
 
 /* Native Bear's 1.5 setting measures 27pt at 15pt: 1.8 in CSS.

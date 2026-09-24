@@ -6,7 +6,7 @@ A quiet space to write. Bear-inspired typography, warm red accents, generous spa
 
 [中文说明](README.zh-CN.md) · [Theme store](https://community.obsidian.md/themes/bear-style) · [Download](https://github.com/cherishh/obsidian-bear-style/releases/latest) · [Demo note](examples/Bear%20Style%20Demo.md)
 
-A **standalone Obsidian theme**, with an equivalent CSS snippet for the default theme and an optional desktop cursor plugin. The theme works without community plugins. Install either the theme or the snippet, not both. This first theme release targets **light mode**; dark mode has basic fallbacks but has not been visually calibrated against Bear.
+A **standalone Obsidian theme**, with an equivalent CSS snippet for the default theme and an optional desktop cursor plugin. The theme works without community plugins. Install either the theme or the snippet, not both. Light mode follows Bear's **Red Graphite** palette; dark mode follows **Dark Graphite**, with its blue accent and charcoal backgrounds.
 
 > **Screenshots show the enhanced setup, not the theme alone.** They were captured in Obsidian with **Highlightr** (additional highlight colors), **Code Styler** (code styling and line numbers), and locally installed fonts. The cursor close-ups also use **Bear Cursor** for the 2px caret. Installing the theme does **not** install these plugins or fonts. All are optional; without them, typography, wrapping, code blocks, and the caret may differ. See [Match the screenshots](#match-the-screenshots).
 
@@ -111,13 +111,13 @@ Override the `--bear-*` variables in a small personal CSS snippet, so theme upda
 
 Keep line-height variables **unitless** (for example, `1.8`, not `1.8em`): plugins can multiply them by a font size. If you change the accent, also update Obsidian's Accent color setting for native controls.
 
-Fonts and base font size stay in Obsidian's Appearance settings. The snippet adjusts muted text and image borders in dark mode while retaining the default theme's background and foreground colors.
+Fonts, base font size, and light/dark mode stay in Obsidian's Appearance settings. Dark mode applies Bear's Dark Graphite colors to text, headings, links, highlights, code, tables, and interface surfaces. Optional Code Styler backgrounds and Highlightr classes are also adapted; explicit inline highlight colors remain user-controlled.
 
 ## Compatibility & limits
 
 - Tested with **Obsidian 1.13.7 on macOS**, both as a standalone theme and as a snippet on the default theme. Other themes may override the snippet rules.
 - Checked in Live Preview and Reading view: heading sizes, lists, quotes, highlights, images, and code layout. The caret was checked in body text, at heading starts, after links, and beside numbered list markers, including native fallback when disabled.
-- Dark-mode variable behavior was checked; the screenshots show light mode. Windows, Linux, and physical mobile devices have not been tested.
+- Dark mode was checked in Live Preview and Reading view against native Bear Dark Graphite on macOS; the screenshots above show light mode. Windows, Linux, and physical mobile devices have not been tested.
 - The cursor plugin requires **Obsidian 1.13.7 or later** and is **desktop only**. Mobile retains its native caret. Later Obsidian versions are not automatically guaranteed compatible.
 - The plugin is designed to leave composition and Vim mode to the editor; IME candidate-window behavior and Vim mode have not been fully tested.
 
