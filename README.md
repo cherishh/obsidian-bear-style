@@ -33,7 +33,6 @@ For a lighter setup, add **"Install only the theme; skip plugins and the demo."*
 
 ## Preview
 
-Captured on September 19, 2026 with the current `main` styles, at 2× resolution.
 
 ![Full English demo in Obsidian: headings, text, lists, tasks, quotes, highlights, code, table, and image](docs/images/demo-en.png)
 
