@@ -62,13 +62,15 @@ No build step, package manager, or theme settings plugin is needed to install ei
 
 ### Optional: the red 2px caret
 
-Bear Cursor is now maintained in its own [repository](https://github.com/cherishh/obsidian-bear-cursor). Check its [community listing](https://community.obsidian.md/plugins/bear-cursor) for store availability.
+Bear Cursor is maintained in its own [repository](https://github.com/cherishh/obsidian-bear-cursor) and is available in the [community plugin directory](https://community.obsidian.md/plugins/bear-cursor). In **Settings → Community plugins → Browse**, search for **Bear Cursor**, install it, and enable it.
+
+For manual installation:
 
 1. Download `manifest.json`, `main.js`, and `styles.css` from the [Bear Cursor release](https://github.com/cherishh/obsidian-bear-cursor/releases/latest).
 2. Place them directly in `<your vault>/.obsidian/plugins/bear-cursor/`.
 3. Reload Obsidian and enable **Bear Cursor** under **Settings → Community plugins**.
 
-Existing local installations use the same plugin ID: disable Bear Cursor, replace its three runtime files, reload, and enable it again. No settings need migration. Once listed, use Obsidian’s community plugin update controls; before then, update manually from the standalone repository. The copy bundled with this theme is the legacy 1.0.1 release.
+Existing local installations use the same plugin ID: disable Bear Cursor, replace its three runtime files, reload, and enable it again. No settings need migration. Use Obsidian’s community plugin update controls, or update manually from the standalone repository. The copy bundled with this theme is the legacy 1.0.1 release.
 
 The plugin uses CodeMirror's editor layer API to draw the primary caret. It follows the current line height, fades gently, and respects reduced-motion preferences. It makes no network requests and stores no settings. Text selections and secondary cursors remain under Obsidian's control.
 

@@ -64,9 +64,9 @@ release, not GitHub's automatically generated source archive. No build, npm,
 repository clone, or developer tooling is needed on the user's machine.
 
 On a compatible desktop installation, obtain Bear Cursor from its standalone
-repository: https://github.com/cherishh/obsidian-bear-cursor. Check its community
-listing before claiming store availability. If listed, install through the
-community plugin browser. Otherwise download `manifest.json`, `main.js`, and
+repository: https://github.com/cherishh/obsidian-bear-cursor. It is listed in the
+community directory; install through the community plugin browser. If the store
+is unavailable, download `manifest.json`, `main.js`, and
 `styles.css` from its latest stable release and put them directly in
 `<config>/plugins/bear-cursor/`. Check the plugin's own minimum version and
 desktop restriction, then reload and enable **Bear Cursor**. Reuse the existing
@@ -121,8 +121,7 @@ The designed cover is promotional; the README's full screenshots show the actual
 Obsidian setup.
 
 Theme updates use Obsidian's **Appearance → Check for updates**. Highlightr and
-Code Styler update through community plugins. Once Bear Cursor is listed, use
-community plugin updates for it too. Until then, back up and disable it, replace
-its three files from the standalone repository’s chosen release, then reload
-and enable it. Uninstall by switching theme and disabling/removing only
+Code Styler and Bear Cursor update through community plugins. For a manual
+Bear Cursor update, back up and disable it, replace its three files from the
+standalone repository’s chosen release, then reload and enable it. Uninstall by switching theme and disabling/removing only
 components added by this installation; restore changed settings selectively.
