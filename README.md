@@ -62,11 +62,13 @@ No build step, package manager, or theme settings plugin is needed to install ei
 
 ### Optional: the red 2px caret
 
-1. Download the full ZIP from [Releases](https://github.com/cherishh/obsidian-bear-style/releases/latest), then copy its entire `plugins/bear-cursor` folder to `<your vault>/.obsidian/plugins/bear-cursor/`.
-2. Confirm it contains `manifest.json`, `main.js`, and `styles.css` directly inside that folder.
-3. Reload Obsidian. Under **Settings → Community plugins**, enable community plugins if needed, then enable **Bear Cursor**.
+Bear Cursor is now maintained in its own [repository](https://github.com/cherishh/obsidian-bear-cursor). Check its [community listing](https://community.obsidian.md/plugins/bear-cursor) for store availability.
 
-Bear Cursor is manually installed from this repository; it is not listed in the community plugin directory and does not have automatic updates. For updates, disable it, replace those three files, reload Obsidian, then enable it again.
+1. Download `manifest.json`, `main.js`, and `styles.css` from the [Bear Cursor release](https://github.com/cherishh/obsidian-bear-cursor/releases/latest).
+2. Place them directly in `<your vault>/.obsidian/plugins/bear-cursor/`.
+3. Reload Obsidian and enable **Bear Cursor** under **Settings → Community plugins**.
+
+Existing local installations use the same plugin ID: disable Bear Cursor, replace its three runtime files, reload, and enable it again. No settings need migration. Once listed, use Obsidian’s community plugin update controls; before then, update manually from the standalone repository. The copy bundled with this theme is the legacy 1.0.1 release.
 
 The plugin uses CodeMirror's editor layer API to draw the primary caret. It follows the current line height, fades gently, and respects reduced-motion preferences. It makes no network requests and stores no settings. Text selections and secondary cursors remain under Obsidian's control.
 
@@ -79,7 +81,7 @@ The covers use real **Obsidian 1.13.7 on macOS** captures in light and dark mode
 | Component | What it contributes | Setup used here |
 | --- | --- | --- |
 | Bear Style theme / `bear.css` | Typography, lists, gray completed tasks, rounded quotes and highlights, striped tables, external-link icons, and native caret color | Included; enable one format |
-| [Bear Cursor](plugins/bear-cursor/README.md) | The red 2px primary caret | Included; version 1.0.1; desktop only |
+| [Bear Cursor](https://github.com/cherishh/obsidian-bear-cursor) | The red 2px primary caret | Standalone release; screenshots use 1.0.1; desktop only |
 | [Highlightr](https://github.com/chetachiezikeuzor/Highlightr-Plugin) | Green and pink highlights, plus commands to create them | Version 1.2.2; **CSS classes** method, **rounded** style; Green `#D3FFA4`, Pink `#FFB8EBA6` |
 | [Code Styler](https://github.com/mayurankv/Obsidian-Code-Styler) | Code block line numbers, syntax colors, and language border | Version 1.1.7; see settings below |
 | Text font | Letter shapes and line wrapping | `Bear Sans UI, Bear Sans UI Heading`, 15px; fonts are **not included** |

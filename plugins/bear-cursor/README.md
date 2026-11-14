@@ -1,5 +1,7 @@
 # Bear Cursor
 
+> Bear Cursor is now maintained and released independently at [cherishh/obsidian-bear-cursor](https://github.com/cherishh/obsidian-bear-cursor). This bundled copy is the legacy 1.0.1 version. See the standalone repository for installation, updates, and migration using the same `bear-cursor` plugin ID.
+
 A small, desktop-only Obsidian plugin that draws a red 2px primary insertion caret using CodeMirror's [layer API](https://codemirror.net/docs/ref/#view.layer).
 
 Requires Obsidian 1.13.7 or later. Tested on macOS with 1.13.7. See the repository [installation guide](../../README.md#optional-the-red-2px-caret).
@@ -11,7 +13,7 @@ Obsidian sometimes adjusts a quote or list's hanging indent after drawing the ca
 The optional [bear.css](../../snippets/bear.css) snippet exposes:
 
 ```css
---bear-caret-color: #cd5853;
+--bear-caret-color: #DD4C4F;
 --bear-caret-width: 2px;
 ```
 

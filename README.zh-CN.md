@@ -64,9 +64,11 @@ Agent 会按照[安装指南](INSTALL.md)识别仓库、安装商店主题和可
 
 ### 可选：红色 2px 光标
 
-从 [Releases](https://github.com/cherishh/obsidian-bear-style/releases/latest) 下载完整 ZIP，把其中的整个 `plugins/bear-cursor` 文件夹复制到 `<你的仓库>/.obsidian/plugins/bear-cursor/`。确认其中直接包含 `manifest.json`、`main.js` 和 `styles.css`，重新加载 Obsidian，在社区插件中开启 **Bear Cursor**。
+Bear Cursor 现已拆分到[独立仓库](https://github.com/cherishh/obsidian-bear-cursor)，商店上架状态见[社区目录页面](https://community.obsidian.md/plugins/bear-cursor)。
 
-这个插件需要从本仓库手动安装，尚未进入社区插件目录，也不会自动更新。更新时先关闭插件，替换以上三个文件，重新加载 Obsidian 后再开启。
+从 [Bear Cursor 的最新 Release](https://github.com/cherishh/obsidian-bear-cursor/releases/latest) 下载 `manifest.json`、`main.js` 和 `styles.css`，直接放入 `<你的仓库>/.obsidian/plugins/bear-cursor/`，重新加载 Obsidian 后，在社区插件中开启 **Bear Cursor**。
+
+原本地安装的插件 ID 保持不变：先停用，替换这三个文件，重新加载后启用即可，无需迁移设置。上架后可通过社区插件检查更新；此前请从独立仓库手动更新。本主题附带的副本保留为旧版 1.0.1。
 
 插件通过 CodeMirror 编辑器的 layer API 绘制主光标，高度跟随当前行，并支持系统的减少动态效果设置。它不访问网络、不写入文件、不保存设置。未安装插件时，CSS 仍会将原生光标设为红色，但宽度由系统决定。请关闭其他光标替换插件，并移除旧的隐藏原生光标的 CSS。
 
@@ -77,7 +79,7 @@ Agent 会按照[安装指南](INSTALL.md)识别仓库、安装商店主题和可
 | 组件 | 作用 | 截图使用的配置 |
 | --- | --- | --- |
 | Bear Style 主题 / `bear.css` | 排版、列表、灰色完成项、圆角引用与高亮、条纹表格、外部链接图标和原生光标颜色 | 本仓库提供，二选一 |
-| [Bear Cursor](plugins/bear-cursor/README.md) | 红色 2px 光标 | 本仓库提供，1.0.1，限桌面端 |
+| [Bear Cursor](https://github.com/cherishh/obsidian-bear-cursor) | 红色 2px 光标 | 独立发布；截图使用 1.0.1；限桌面端 |
 | [Highlightr](https://github.com/chetachiezikeuzor/Highlightr-Plugin) | 多色高亮及高亮命令 | 1.2.2，CSS classes 模式、rounded 样式；Green `#D3FFA4`、Pink `#FFB8EBA6` |
 | [Code Styler](https://github.com/mayurankv/Obsidian-Code-Styler) | 代码块行号、语法配色和语言边框 | 1.1.7，具体设置见下方 |
 | 正文字体 | 字形和换行位置 | `Bear Sans UI, Bear Sans UI Heading`，15px；字体不随项目分发 |

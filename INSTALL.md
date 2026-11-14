@@ -63,14 +63,19 @@ Download the `obsidian-bear-style-v*.zip` **release asset** from the chosen stab
 release, not GitHub's automatically generated source archive. No build, npm,
 repository clone, or developer tooling is needed on the user's machine.
 
-On a compatible desktop installation, copy the ZIP's `plugins/bear-cursor/` into
-`<config>/plugins/bear-cursor/`. It must directly contain `manifest.json`,
-`main.js`, and `styles.css`. Check the plugin's own minimum version and desktop
-restriction, then enable **Bear Cursor**. On mobile or unsupported versions,
-skip it and explain that the native red caret remains. Disable Ninja Cursor or
-another active cursor replacement only if it conflicts; do not remove unrelated
-plugins. Bear Cursor is not in the community plugin directory and is updated
-manually from this repository.
+On a compatible desktop installation, obtain Bear Cursor from its standalone
+repository: https://github.com/cherishh/obsidian-bear-cursor. Check its community
+listing before claiming store availability. If listed, install through the
+community plugin browser. Otherwise download `manifest.json`, `main.js`, and
+`styles.css` from its latest stable release and put them directly in
+`<config>/plugins/bear-cursor/`. Check the plugin's own minimum version and
+desktop restriction, then reload and enable **Bear Cursor**. Reuse the existing
+`bear-cursor` folder for local installations; disable it before replacing the
+three files and do not downgrade a newer installed version. The theme ZIP
+contains a legacy 1.0.1 copy, not the independently maintained release.
+On mobile or unsupported versions, skip it and explain that the native red
+caret remains. Disable another cursor replacement only if it conflicts; do not
+remove unrelated plugins.
 
 Install and enable **Highlightr** (`highlightr-plugin`) and **Code Styler**
 (`code-styler`) through Obsidian's community plugin browser, or use the official
@@ -116,7 +121,8 @@ The designed cover is promotional; the README's full screenshots show the actual
 Obsidian setup.
 
 Theme updates use Obsidian's **Appearance → Check for updates**. Highlightr and
-Code Styler update through community plugins. Bear Cursor updates separately:
-back up and disable it, replace its three files from the chosen release, then
-reload and enable it. Uninstall by switching theme and disabling/removing only
+Code Styler update through community plugins. Once Bear Cursor is listed, use
+community plugin updates for it too. Until then, back up and disable it, replace
+its three files from the standalone repository’s chosen release, then reload
+and enable it. Uninstall by switching theme and disabling/removing only
 components added by this installation; restore changed settings selectively.
